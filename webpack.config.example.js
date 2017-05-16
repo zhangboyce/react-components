@@ -6,7 +6,7 @@ var node_modules = path.resolve(__dirname, './node_modules');
 var development = process.env.NODE_ENV == 'development';
 
 module.exports = {
-    entry: path.resolve(path.resolve(__dirname), './example/Example.jsx'),
+    entry: path.resolve(__dirname, './example/Example.jsx'),
     output: {
         publicPath: development ? "http://localhost:8008/example/dist/" : "./example/dist/",
         path: path.resolve(__dirname, './example/dist'),
@@ -46,13 +46,33 @@ module.exports = {
             {
                 test:/\.(jpg|png|gif|jpeg)?$/,
                 use: [ { loader: 'url-loader' } ]
+            },
+            {
+                test:/\.svg(\?v=\d+\.\d+\.\d+)?$/,
+                use: [ { loader: 'file-loader?mimetype=image/svg+xml' } ]
+            },
+            {
+                test:/\.woff(\?v=\d+\.\d+\.\d+)?$/,
+                use: [ { loader: 'file-loader?mimetype=application/font-woff' } ]
+            },
+            {
+                test:/\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+                use: [ { loader: 'file-loader?mimetype=application/font-woff' } ]
+            },
+            {
+                test:/\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+                use: [ { loader: 'file-loader?mimetype=application/octet-stream' } ]
+            },
+            {
+                test:/\.eot(\?v=\d+\.\d+\.\d+)?$/,
+                use: [ { loader: 'file-loader' } ]
             }
         ]
     },
     resolve: {
         extensions: ['.js', '.jsx'],
         alias:{
-            "react-components":development ? "../index.js" : '../dist/bundle.js'
+            "react-components":development ? path.resolve(__dirname, './index.js') : path.resolve(__dirname, './dist/bundle.js')
         }
     },
     plugins: [

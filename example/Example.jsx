@@ -1,26 +1,21 @@
-import { Router, Route, Link, browserHistory } from 'react-router';
-import React from 'react';
+import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import './main.less';
-import '../public/css/bootstrap.min.css';
+import './public/css/main.less';
+import './public/css/bootstrap.docs.css';
+import '../node_modules/font-awesome/css/font-awesome.min.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-import App from './App.jsx';
-import  { ProgressBar }  from '../index';
-
-const ProgressBarDemo = class extends React.Component {
-    render() {
-        let steps = ["step1", "step2", "step3", "step4"];
-        console.log(ProgressBar);
-        return (
-            <ProgressBar steps={ steps } current={ 3 }/>
-        );
-    }
-};
+import ProgressBarDemo from './demo/ProgressBarDemo.jsx';
+import RowInputDemo from './demo/RowInputDemo.jsx';
+import FormGroupDemo from './demo/FormGroupDemo.jsx';
 
 ReactDOM.render(
     <Router history={ browserHistory }>
-        <Route path="/" component={ App }>
-            <Route path="progressbar" component={ ProgressBarDemo }/>
-        </Route>
+        <Route path="/" component={ ProgressBarDemo }/>
+        <Route path="progressbar" component={ ProgressBarDemo } />
+        <Route path="rowinput" component={ RowInputDemo } />
+        <Route path="formgroup" component={ FormGroupDemo } />
+
     </Router>, document.getElementById('main'));

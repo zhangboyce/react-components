@@ -11,7 +11,7 @@ export default class ProgressBar extends Component {
         let stepsComps = [];
         steps.forEach((step, index) => {
             stepsComps.push (
-                <li className={ className(index + 1) }>
+                <li className={ className(index + 1) } key={ step }>
                     <div>
                         <i>{ index + 1 }</i>
                         <p>{ step }</p>
