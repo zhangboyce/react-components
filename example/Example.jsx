@@ -10,6 +10,8 @@ import '../public/vendor/font-awesome/css/font-awesome.min.css';
 import ProgressBarDemo from './demo/ProgressBarDemo.jsx';
 import RowInputDemo from './demo/RowInputDemo.jsx';
 import FormGroupDemo from './demo/FormGroupDemo.jsx';
+import TagDemo from './demo/TagDemo.jsx';
+import SearchDemo from './demo/SearchDemo.jsx';
 
 ReactDOM.render(
     <Router history={ browserHistory }>
@@ -17,5 +19,7 @@ ReactDOM.render(
         <Route path="progressbar" component={ ProgressBarDemo } />
         <Route path="rowinput" component={ RowInputDemo } />
         <Route path="formgroup" component={ FormGroupDemo } />
+        <Route path="tag" component={ TagDemo } />
+        <Route path="search" component={ SearchDemo } />
 
     </Router>, document.getElementById('main'));
