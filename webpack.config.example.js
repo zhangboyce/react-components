@@ -2,7 +2,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var node_modules = path.resolve(__dirname, './node_modules');
-
+var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 var development = process.env.NODE_ENV == 'development';
 
 module.exports = {
@@ -10,7 +10,7 @@ module.exports = {
     output: {
         publicPath: development ? "http://localhost:8008/example/dist/" : "./example/dist/",
         path: path.resolve(__dirname, './example/dist'),
-        filename: 'bundle.js'
+        filename: 'react-components-example.min.js'
     },
     module: {
         rules: [
@@ -72,11 +72,12 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx'],
         alias:{
-            "react-components":development ? path.resolve(__dirname, './index.js') : path.resolve(__dirname, './dist/bundle.js')
+            "react-components":development ? path.resolve(__dirname, './index.js') : path.resolve(__dirname, './dist/react-components.min.js')
         }
     },
     plugins: [
-        new webpack.NoEmitOnErrorsPlugin()
+        new webpack.NoEmitOnErrorsPlugin(),
+        new UglifyJSPlugin()
     ],
     stats: {
         colors: true

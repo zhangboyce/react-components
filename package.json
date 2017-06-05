@@ -2,13 +2,14 @@
   "name": "react-components",
   "version": "0.0.1",
   "main": "index.js",
-  "description": "ui library to reactjs",
+  "description": "A ui library to react.",
   "license": "MIT",
   "repository": "zhangboyce/react-components",
   "scripts": {
+    "bower": "./node_modules/bower/bin/bower install",
     "build": "webpack --config webpack.config.js --progress",
     "watch": "webpack --config webpack.config.js --watch --inline --progress",
-    "build-example": "NODE_ENV=development webpack --config webpack.config.example.js --progress",
+    "build-example": "NODE_ENV=production webpack --config webpack.config.example.js --progress",
     "example": "NODE_ENV=development webpack-dev-server --config webpack.config.example.js --contentBase ./example --devtool eval --progress --colors --hot --inline --historyApiFallback --host 127.0.0.1 --port 8008"
   },
   "dependencies": {
@@ -17,14 +18,15 @@
     "react-router": "^2.1.2",
     "path": "^0.12.7",
     "less": "^2.7.2",
-    "bootstrap": "^3.3.7",
-    "font-awesome": "^4.7.0",
-    "html-escape-translate": "^1.0.0"
+    "html-escape-translate": "^1.0.0",
+    "bower": "^1.8.0"
   },
   "devDependencies": {
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-stage-0": "^6.5.0",
     "webpack": "^2.5.1",
+    "uglify-js": "^2.8.0",
+    "uglifyjs-webpack-plugin": "^0.4.3",
     "style-loader": "^0.13.1",
     "css-loader": "^0.26.1",
     "less-loader": "^4.0.3",

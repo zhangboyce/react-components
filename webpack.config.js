@@ -4,12 +4,13 @@
 var path = require('path');
 var webpack = require('webpack');
 var node_modules = path.resolve(__dirname, './node_modules');
+var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     entry: path.resolve(path.resolve(__dirname), 'index.js'),
     output: {
         path: path.resolve(__dirname, './dist'),
-        filename: 'bundle.js'
+        filename: 'react-components.min.js'
     },
     module: {
         rules: [
@@ -72,7 +73,8 @@ module.exports = {
         extensions: ['.js', '.jsx']
     },
     plugins: [
-        new webpack.NoEmitOnErrorsPlugin()
+        new webpack.NoEmitOnErrorsPlugin(),
+        new UglifyJSPlugin()
     ],
     stats: {
         colors: true
