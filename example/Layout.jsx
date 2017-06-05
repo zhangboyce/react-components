@@ -4,7 +4,9 @@ import { Link } from 'react-router';
 const links = {
     "progressbar": "流程进度条",
     "rowinput": "输入框",
-    "formgroup": "表单组"
+    "formgroup": "表单组",
+    "tag": "标签",
+    "search": "搜索"
 };
 
 export default class Layout extends Component {

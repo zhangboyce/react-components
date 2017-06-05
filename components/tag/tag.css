@@ -1,0 +1,22 @@
+.react-component-tag {
+    border: 1px solid rgba(236,97,73,.7);
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 5px;
+    color: rgb(234, 111, 90);
+}
+
+.react-component-tag:hover {
+    color: #ec6149;
+    border-color: #ec6149;
+    background-color: rgba(236,97,73,.05);
+    cursor: pointer;
+}
+
+.react-component-tags .react-component-tag {
+    margin: 10px 5px;
+}
+
+.react-component-tag > i {
+
+}
