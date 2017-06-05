@@ -4,5 +4,7 @@
 node_modules/
 .env
 /public/build/*
+/public/vendor/*
 /config/*
-
+test.js
+npm-debug.log
