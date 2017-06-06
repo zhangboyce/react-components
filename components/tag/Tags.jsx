@@ -1,7 +1,7 @@
 'use strict';
 import React, { Component, PropTypes } from 'react';
 import Tag from './Tag.jsx';
-import './tag.css';
+import './tag.less';
 
 export default class Tags extends Component {
     render() {
@@ -19,7 +19,7 @@ export default class Tags extends Component {
     }
 };
 
-Tag.propTypes = {
+Tags.propTypes = {
     names: PropTypes.array.isRequired,
     onClick: PropTypes.func
 };
