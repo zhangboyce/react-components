@@ -19,6 +19,6 @@ npm install
 npm run bower
 npm run example
 
-http://127.0.0.1:8008
+http://localhost:8008
 
 ```

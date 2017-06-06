@@ -4,8 +4,6 @@ import ReactDOM from 'react-dom';
 
 import './public/css/main.less';
 import './public/css/bootstrap.docs.css';
-import '../public/vendor/bootstrap/dist/css/bootstrap.min.css';
-import '../public/vendor/font-awesome/css/font-awesome.min.css';
 
 import ProgressBarDemo from './demo/ProgressBarDemo.jsx';
 import RowInputDemo from './demo/RowInputDemo.jsx';
