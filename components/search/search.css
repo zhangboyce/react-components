@@ -1,0 +1,14 @@
+.react-component-search {
+    position: relative;
+}
+
+.react-component-search > i {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-size: 16px;
+}
+
+.react-component-search > i.fa-times:hover {
+    cursor: pointer;
+}
