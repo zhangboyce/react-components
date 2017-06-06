@@ -15,9 +15,9 @@ export default class Tag extends Component {
 
     render() {
         return (
-            <div className="react-component-tag" onClick={ this.handleOnClick(this.props.name) } >
+            <span className="react-component-tag" onClick={ this.handleOnClick(this.props.name) } >
                 { '# ' + this.props.name }
-            </div>
+            </span>
         );
     }
 };

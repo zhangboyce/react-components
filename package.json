@@ -9,8 +9,8 @@
     "bower": "./node_modules/bower/bin/bower install",
     "build": "webpack --config webpack.config.js --progress",
     "watch": "webpack --config webpack.config.js --watch --inline --progress",
-    "build-example": "NODE_ENV=production webpack --config webpack.config.example.js --progress",
-    "example": "NODE_ENV=development webpack-dev-server --config webpack.config.example.js --contentBase ./example --devtool eval --progress --colors --hot --inline --historyApiFallback --host 127.0.0.1 --port 8008"
+    "build-example": "NODE_ENV=development webpack --config webpack.config.example.js --progress",
+    "example": "NODE_ENV=development webpack-dev-server --config webpack.config.example.js --contentBase ./example --devtool eval --progress --colors --hot --inline --historyApiFallback --host localhost --port 8008"
   },
   "dependencies": {
     "react": "^15.0.2",

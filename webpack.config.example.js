@@ -76,8 +76,8 @@ module.exports = {
         }
     },
     plugins: [
-        new webpack.NoEmitOnErrorsPlugin(),
-        new UglifyJSPlugin()
+        new webpack.NoEmitOnErrorsPlugin()
+        //new UglifyJSPlugin()
     ],
     stats: {
         colors: true
