@@ -11,7 +11,7 @@ export default class TagDemo extends Component {
                 <p>
                     <span>1. 普通标签:</span>
                     <div className="bs-example" data-example-id="simple-pre">
-                        <div >
+                        <div style={ { border: '1px dashed rgb(196, 196, 196)' } }>
                             <Tag name="绿茶" />
                             <Tag name="红茶" />
                             <Tag name="可口可乐" />

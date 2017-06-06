@@ -9,7 +9,7 @@ import ProgressBarDemo from './demo/ProgressBarDemo.jsx';
 import RowInputDemo from './demo/RowInputDemo.jsx';
 import FormGroupDemo from './demo/FormGroupDemo.jsx';
 import TagDemo from './demo/TagDemo.jsx';
-import SearchDemo from './demo/SearchDemo.jsx';
+import SearchInputDemo from './demo/SearchInputDemo.jsx';
 
 ReactDOM.render(
     <Router history={ browserHistory }>
@@ -18,6 +18,6 @@ ReactDOM.render(
         <Route path="rowinput" component={ RowInputDemo } />
         <Route path="formgroup" component={ FormGroupDemo } />
         <Route path="tag" component={ TagDemo } />
-        <Route path="search" component={ SearchDemo } />
+        <Route path="searchinput" component={ SearchInputDemo } />
 
     </Router>, document.getElementById('main'));
