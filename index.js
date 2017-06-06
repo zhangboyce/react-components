@@ -13,7 +13,7 @@ import './public/vendor/unslider/dist/css/unslider.css';
 import './public/vendor/unslider/dist/css/unslider-dots.css';
 
 import './public/vendor/jquery/dist/jquery.min.js';
-//import './public/vendor/tether/dist/js/tether.min.js';
+import './public/vendor/tether/dist/js/tether.min.js';
 //import './public/vendor/bootstrap/dist/js/bootstrap.min.js';
 import './public/vendor/unslider/dist/js/unslider-min.js';
 
