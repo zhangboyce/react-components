@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 
-import  { Search }  from 'react-components';
+import  { Search,SearchBtn }  from 'react-components';
 import Layout from '../Layout.jsx';
 
 export default class SearchDemo extends Component {
@@ -31,10 +31,26 @@ export default class SearchDemo extends Component {
                            <Search keyword={ this.state.keyword }
                                    onChange={ this.handleChange }
                                    onSearch={ this.handleSearch } />
+
                         </div>
                         <pre> { '<div>' +
                                 '<Search keyword={ this.state.keyword } onChange={ this.handleChange } onSearch={ this.handleSearch }/>'+
                                 '</div>' }
+                        </pre>
+                    </div>
+                </p>
+                <p>
+                    <span>带按钮的搜索:</span>
+                    <div className="bs-example" data-example-id="simple-pre">
+                        <div >
+                            <SearchBtn keyword={ this.state.keyword }
+                                    onChange={ this.handleChange }
+                                    onSearch={ this.handleSearch } />
+
+                        </div>
+                        <pre> { '<div>' +
+                        '<SearchBtn keyword={ this.state.keyword } onChange={ this.handleChange } onSearch={ this.handleSearch }/>'+
+                        '</div>' }
                         </pre>
                     </div>
                 </p>

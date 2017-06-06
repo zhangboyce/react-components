@@ -6,6 +6,7 @@ import FormGroup from './components/form/FormGroup.jsx';
 import Tag from './components/tag/Tag.jsx';
 import Tags from './components/tag/Tags.jsx';
 import Search from './components/search/Search.jsx';
+import SearchBtn from './components/search/SearchBtn.jsx';
 
 import './public/vendor/bootstrap/dist/css/bootstrap.min.css';
 import './public/vendor/font-awesome/css/font-awesome.min.css';
@@ -20,5 +21,6 @@ module.exports = {
     FormGroup,
     Tag,
     Tags,
-    Search
+    Search,
+    SearchBtn
 };

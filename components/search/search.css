@@ -1,14 +1,57 @@
 .react-component-search {
-    position: relative;
+    display: flex;
 }
 
-.react-component-search > i {
+.react-component-search > div {
+    position: relative;
+    padding-right: 0;
+}
+
+.react-component-search > div > i {
     position: absolute;
-    top: 8px;
+    top: 15px;
     right: 10px;
     font-size: 16px;
 }
 
-.react-component-search > i.fa-times:hover {
+.react-component-search > div > i.fa-times:hover {
     cursor: pointer;
 }
+
+.react-component-search input {
+    height: 50px;
+}
+
+.react-component-search > a {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    background-color: rgb(97,169,218);
+    color: white;
+    text-decoration: none;
+    line-height: 50px;
+    text-align: center;
+    margin-left: 3px;
+}
+
+.react-component-search > a:link {
+    text-decoration: none;
+    color: white;
+}
+
+.react-component-search > a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.react-component-search > a:hover {
+    background-color: rgb(80,150,200);
+    text-decoration: none;
+    color: white;
+}
+
+.react-component-search > a:active {
+    text-decoration: none;
+    color: white;
+}
+

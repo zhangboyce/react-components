@@ -34,9 +34,11 @@ export default class Tag extends Component {
                         !this.props.keyword &&
                         <i className="fa fa-search"/>
                     }
-
                     <input type="text" className="form-control" value={this.props.keyword} onChange={ this.handleChange.bind(this) } onKeyUp={ this.handleKeyUp.bind(this) } />
                 </div>
+                <a href="#" onClick={  }>帐号搜索</a>
+                <a href="#">文章搜索</a>
+
             </div>
         );
     }
