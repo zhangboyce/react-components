@@ -3,8 +3,10 @@
 *.iml
 node_modules/
 .env
-/public/build/*
-/public/vendor/*
-/config/*
+public/build/
+public/vendor/
+example/public/build/
+example/public/vendor/
+config/
 test.js
 npm-debug.log
