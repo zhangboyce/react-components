@@ -7,7 +7,8 @@ const links = {
     "formgroup": "表单组",
     "tag": "标签",
     "searchinput": "搜索框",
-    "card":"卡片"
+    "card":"卡片",
+    "sliderbanner": "轮播Banner"
 };
 
 export default class Layout extends Component {

@@ -8,14 +8,8 @@ import Tags from './components/tag/Tags.jsx';
 import SearchInput from './components/search/SearchInput.jsx';
 import Card from './components/card/Card.jsx';
 import Cards from './components/card/Cards.jsx';
-
-import './public/vendor/bootstrap/dist/css/bootstrap.min.css';
-import './public/vendor/font-awesome/css/font-awesome.min.css';
-import './public/vendor/unslider/dist/css/unslider.css';
-
-import './public/vendor/jquery/dist/jquery.min.js';
-import './public/vendor/unslider/dist/js/unslider-min.js';
-
+import Slider from './components/banner/Slider.jsx';
+import SliderBanner from './components/banner/SliderBanner.jsx';
 
 module.exports = {
     ProgressBar,
@@ -25,5 +19,7 @@ module.exports = {
     Tags,
     SearchInput,
     Card,
-    Cards
+    Cards,
+    Slider,
+    SliderBanner
 };

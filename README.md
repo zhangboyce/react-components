@@ -17,6 +17,9 @@ npm run build
 git clone git@github.com:zhangboyce/react-components.git
 npm install
 npm run bower
+cd example
+bower install
+cd ..
 npm run example
 
 http://localhost:8008
