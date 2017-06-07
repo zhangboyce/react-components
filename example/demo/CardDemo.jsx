@@ -19,11 +19,7 @@ export default class CardDemo extends Component {
                               author="教你学一点说话技巧" />
                 </DP>
 
-                <p>
-                    <span>1. 普通卡片:</span>
-                    <div className="bs-example" data-example-id="simple-pre">
-                        <div style={ { border: '1px dashed rgb(196, 196, 196)',padding:'20px' } } className="row">
-                            <Cards sum={ 3 }>
+                <DP title="2. 卡片组:" code='<Cards rowCols={ 3 }>
                                 <Card cover="/public/images/card/002.jpg"
                                       title="男人7种行为等同于说“我爱你”！你看懂了吗？"
                                       desc="阅读本文前，请您先点击本文上面的蓝色字体“教你学一点说话技巧”再点击“关注”，这样您就可以继续免费收到文章了"
@@ -36,26 +32,30 @@ export default class CardDemo extends Component {
                                       title="男人7种行为等同于说“我爱你”！你看懂了吗？"
                                       desc="阅读本文前，请您先点击本文上面的蓝色字体“教你学一点说话技巧”再点击“关注”，这样您就可以继续免费收到文章了"
                                       author="教你学一点说话技巧" />
-                            </Cards>
-                            <Cards sum={ 3 }>
                                 <Card cover="/public/images/card/002.jpg"
                                       title="男人7种行为等同于说“我爱你”！你看懂了吗？"
                                       desc="阅读本文前，请您先点击本文上面的蓝色字体“教你学一点说话技巧”再点击“关注”，这样您就可以继续免费收到文章了"
                                       author="教你学一点说话技巧" />
-                                <Card cover="/public/images/card/002.jpg"
-                                      title="男人7种行为等同于说“我爱你”！你看懂了吗？"
-                                      desc="阅读本文前，请您先点击本文上面的蓝色字体“教你学一点说话技巧”再点击“关注”，这样您就可以继续免费收到文章了"
-                                      author="教你学一点说话技巧" />
-                                <Card cover="/public/images/card/002.jpg"
-                                      title="男人7种行为等同于说“我爱你”！你看懂了吗？"
-                                      desc="阅读本文前，请您先点击本文上面的蓝色字体“教你学一点说话技巧”再点击“关注”，这样您就可以继续免费收到文章了"
-                                      author="教你学一点说话技巧" />
-                            </Cards>
-                        </div>
-                        <pre> { '<Card project= { list }/>' } </pre>
-                    </div>
-                </p>
-
+                            </Cards>'>
+                    <Cards rowCols={ 3 }>
+                        <Card cover="/public/images/card/002.jpg"
+                              title="男人7种行为等同于说“我爱你”！你看懂了吗？"
+                              desc="阅读本文前，请您先点击本文上面的蓝色字体“教你学一点说话技巧”再点击“关注”，这样您就可以继续免费收到文章了"
+                              author="教你学一点说话技巧" />
+                        <Card cover="/public/images/card/002.jpg"
+                              title="男人7种行为等同于说“我爱你”！你看懂了吗？"
+                              desc="阅读本文前，请您先点击本文上面的蓝色字体“教你学一点说话技巧”再点击“关注”，这样您就可以继续免费收到文章了"
+                              author="教你学一点说话技巧" />
+                        <Card cover="/public/images/card/002.jpg"
+                              title="男人7种行为等同于说“我爱你”！你看懂了吗？"
+                              desc="阅读本文前，请您先点击本文上面的蓝色字体“教你学一点说话技巧”再点击“关注”，这样您就可以继续免费收到文章了"
+                              author="教你学一点说话技巧" />
+                        <Card cover="/public/images/card/002.jpg"
+                              title="男人7种行为等同于说“我爱你”！你看懂了吗？"
+                              desc="阅读本文前，请您先点击本文上面的蓝色字体“教你学一点说话技巧”再点击“关注”，这样您就可以继续免费收到文章了"
+                              author="教你学一点说话技巧" />
+                    </Cards>
+                </DP>
             </Layout>
         );
     }
