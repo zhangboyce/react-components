@@ -4,16 +4,20 @@ import React, { Component, PropTypes } from 'react';
 
 export default class Cards extends Component {
     componentDidMount() {
-        if (this.props.sum) {
+        let sum = this.props.sum;
+        if (sum) {
             let $this = $(this.refs._this_);
-            let col = Math.floor(12 / this.props.sum);
-            $this.find('.react-component-card').removeClass('col-md-4').addClass('col-md-' + col);
+
+            let margin_left_right = 1;
+            let sum_margin = sum * 2 * margin_left_right;
+            $this.find('.react-component-card').css('width', ((100-sum_margin) / sum) + '%');
+            $this.find('.react-component-card').css('margin', `10px ${ margin_left_right }%`);
         }
     }
 
     render() {
         return (
-            <div ref="_this_" className="react-component-cards row">
+            <div ref="_this_" className="react-component-cards">
                 { this.props.children }
             </div>
         );

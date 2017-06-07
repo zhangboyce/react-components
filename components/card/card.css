@@ -3,6 +3,10 @@
     box-shadow: 1px 2px 20px 1px #d3d3d3;
     cursor: pointer;
     border: 2px solid transparent;
+    float: inherit;
+    position: relative;
+    min-height: 1px;
+    width: 33.333333%;
 }
 
 .react-component-card:hover {
@@ -76,5 +80,5 @@
 }
 
 .react-component-cards .react-component-card {
-
+    float: left;
 }

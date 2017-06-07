@@ -8,7 +8,7 @@ export default class Card extends Component {
     render() {
         let { cover, title, author, desc, readNum, likeNum, createdDate  } = this.props;
         return (
-          <div className="react-component-card col-md-4">
+          <div className="react-component-card">
               <img src={ cover } />
               <div>
                   <h4>{ title }</h4>
