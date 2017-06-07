@@ -19,7 +19,20 @@
 }
 
 .react-component-banner .inner {
-    background: url(/public/images/slider-mask.png) no-repeat center top;
+    background: linear-gradient(to right,
+        rgba(255, 255, 255, .0),
+        rgba(122, 122, 122, .2),
+        rgba(0, 0, 0, .5),
+        rgba(122, 122, 122, .2),
+        rgba(255, 255, 255, .0)
+    );
+    background: -prefix-linear-gradient(right,
+        rgba(255, 255, 255, .0),
+        rgba(122, 122, 122, .2),
+        rgba(0, 0, 0, .5),
+        rgba(122, 122, 122, .2),
+        rgba(255, 255, 255, .0)
+    );
     position: absolute;
     width: 80%;
     margin-left: 10%;

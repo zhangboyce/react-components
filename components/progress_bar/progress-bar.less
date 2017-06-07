@@ -1,3 +1,11 @@
+
+.circle(@color) {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background: @color;
+}
+
 .progress-bar-container {
     margin: 0;
     padding: 0;
@@ -28,18 +36,16 @@
 
 .progress-bar-container > ul > li > div > i {
     display: inline-block;
-    width: 28px;
-    height: 28px;
     font-size: 14px;
     font-style: inherit;
     line-height: 28px;
     color: #fff;
-    .i-background(-442px)
+    .circle(lightgray);
 }
 
 .progress-bar-container > ul > li.active > div > i,
 .progress-bar-container > ul > li.passed > div > i {
-    .i-background(-404px)
+    .circle(teal);
 }
 
 .progress-bar-container > ul > li > div > p {
@@ -61,13 +67,10 @@
 }
 
 .progress-bar-container > ul > li.passed > i {
-    background-color: #2f86f6;
+    background-color: teal;
 }
 
 .progress-bar-container > ul > li.active > i {
-    .i-background(-392px)
-}
-
-.i-background(@top) {
-    background: rgb(254, 254, 254) url(/public/images/common.png) no-repeat 0 @top;
+    background: linear-gradient(to right, teal, lightgray);
+    background: -prefix-linear-gradient(right, teal, lightgray);
 }

@@ -4,6 +4,15 @@ import React, { PropTypes, Component } from 'react';
 import './progress-bar.less';
 
 export default class ProgressBar extends Component {
+
+    componentDidMount() {
+        let { stepWidth, initColor, passedColor } = this.props;
+        let $this = $(this.refs._this_);
+        if (stepWidth) {
+            $this.find('ul > li > i').css('width', stepWidth);
+        }
+    }
+
     render () {
         const { steps, current } = this.props;
 
@@ -24,7 +33,7 @@ export default class ProgressBar extends Component {
         });
 
         return (
-            <div className="progress-bar-container">
+            <div ref="_this_" className="progress-bar-container">
                 {
                     stepsComps && stepsComps.length != 0 &&
                     <ul>
@@ -38,5 +47,8 @@ export default class ProgressBar extends Component {
 
 ProgressBar.propTypes = {
     steps: PropTypes.array.isRequired,
+    stepWidth: PropTypes.string,
+    passedColor: PropTypes.string,
+    initColor: PropTypes.string,
     current: PropTypes.number.isRequired
 };

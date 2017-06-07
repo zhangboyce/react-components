@@ -13,6 +13,10 @@ export default class ProgressBarDemo extends Component {
                 <DP title="1. 默认流程进度条:" code='<ProgressBar steps={ steps } current={ 3 }/>'>
                     <ProgressBar steps={ steps } current={ 3 }/>
                 </DP>
+
+                <DP title="2. 指定每一步的长度:" code='<ProgressBar steps={ steps } current={ 3 }/>'>
+                    <ProgressBar stepWidth="300px" steps={ steps } current={ 2 }/>
+                </DP>
             </Layout>
         );
     }
