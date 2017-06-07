@@ -1,0 +1,84 @@
+.react-component-card {
+    padding: 4px!important;
+    box-shadow: 1px 2px 20px 1px #d3d3d3;
+    cursor: pointer;
+    border: 2px solid transparent;
+    float: inherit;
+    position: relative;
+    min-height: 1px;
+    width: 33.333333%;
+}
+
+.react-component-card:hover {
+    border: 2px solid rgb(97,169,218);
+}
+
+.react-component-card img {
+    width: 100%;
+    height: auto;
+}
+
+.react-component-card h4 {
+    margin: 0;
+    margin-top: 8px;
+    font-weight: bold;
+    color: rgb(89,89,90);
+    height: 40px;
+    overflow-y: hidden;
+}
+
+.react-component-card > div {
+    color: rgb(89,89,90);
+    font-weight: bold;
+    padding: 10px 20px 0;
+}
+
+.react-component-card > div > div {
+    font-size: 13px;
+    font-weight: normal;
+    color: rgb(153,153,153);
+    margin: 6px 0;
+}
+
+.react-component-card p {
+    font-weight: normal;
+    color: #bcbcbc;
+    font-size: 12px;
+    margin: 0;
+    margin-bottom: 5px;
+    height: 50px;
+    overflow-y: hidden;
+}
+
+.react-component-card > div > div > span {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.react-component-card > div > div > span:nth-child(1) {
+    color: rgb(116,116,116);
+}
+
+.react-component-card > div > div > span:nth-child(2) {
+    color: rgb(212,35,122);
+}
+
+.react-component-card > div > div > span:nth-child(3) {
+    color: rgb(73,157,241);
+}
+
+.react-component-card > div > div > span > i {
+    font-style: normal;
+    color: rgb(89,89,90);
+}
+
+.react-component-card > div > div:nth-of-type(2) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.react-component-cards .react-component-card {
+    float: left;
+}
