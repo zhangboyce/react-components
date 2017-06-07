@@ -6,7 +6,7 @@ export default class SearchInput extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { keyword: '' };
+        this.state = { keyword: '', isFocus: false };
     }
 
     handleChange = e => {
@@ -29,17 +29,19 @@ export default class SearchInput extends Component {
         return (
             <div className="react-component-search">
                 {
-                    this.state.keyword &&
-                    <i className="fa fa-times" onClick={ this.handleClear }/>
+                    (this.state.keyword || this.state.isFocus) &&
+                    <i className="fa fa-times" onClick={ this.handleClear } />
                 }
                 {
-                    !this.state.keyword &&
-                    <i className="fa fa-search"/>
+                    (!this.state.keyword && !this.state.isFocus) &&
+                    <i className="fa fa-search" />
                 }
 
                 <input type="text"
                        placeholder={ this.props.placeholder || '' }
                        value={ this.state.keyword }
+                       onFocus={ () => { this.setState({ isFocus: true }); } }
+                       onBlur={ () => { this.setState({ isFocus: false }); }  }
                        onChange={ this.handleChange }
                        onKeyUp={ this.handleKeyUp } />
             </div>

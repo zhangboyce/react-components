@@ -6,7 +6,8 @@ const links = {
     "rowinput": "输入框",
     "formgroup": "表单组",
     "tag": "标签",
-    "searchinput": "搜索框"
+    "searchinput": "搜索框",
+    "card":"卡片"
 };
 
 export default class Layout extends Component {
