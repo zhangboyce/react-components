@@ -2,31 +2,22 @@ import React, { PropTypes, Component } from 'react';
 
 import  { SearchInput }  from 'react-components';
 import Layout from './Layout.jsx';
+import DP from './DP.jsx';
 
 export default class SearchInputDemo extends Component {
 
     render() {
         return (
             <Layout title="搜索框">
-                <p>
-                    <span>1. 普通搜索框:</span>
-                    <div className="bs-example" data-example-id="simple-pre">
-                        <div style={ { border: '1px dashed rgb(196, 196, 196)' } }>
-                            <SearchInput onSearch={ keyword => { alert(keyword) } } />
-                        </div>
-                        <pre> { '<SearchInput onSearch={ keyword => { alert(keyword) } } />' } </pre>
-                    </div>
-                </p>
-                <p>
-                    <span>2. 可以监听onChange事件:</span>
-                    <div className="bs-example" data-example-id="simple-pre">
-                        <div style={ { border: '1px dashed rgb(196, 196, 196)' } }>
-                            <SearchInput placeholder="可以监听onChange事件" onChange={ keyword => { document.getElementById('msg').innerHTML = keyword; } } />
-                        </div>
-                        <div id="msg" style={{ height: '30px',lineHeight:'30px',padding:'4px 22px' }}></div>
-                        <pre> { '<SearchInput onSearch={ keyword => { document.getElementById("msg").innerHTML = keyword; } } />' } </pre>
-                    </div>
-                </p>
+                <DP title="1. 普通搜索框:" code="<SearchInput onSearch={ keyword => { alert(keyword) } } />">
+                    <SearchInput onSearch={ keyword => { alert(keyword) } } />
+                </DP>
+
+                <DP title="2. 可以监听onChange事件:" code='<SearchInput placeholder="可以监听onChange事件" onChange={ keyword => { document.getElementById("msg").innerHTML = keyword; } } />'>
+                    <SearchInput placeholder="可以监听onChange事件" onChange={ keyword => { document.getElementById("msg").innerHTML = keyword; } } />
+                </DP>
+                <div id="msg" style={{ height: '30px',lineHeight:'30px',padding:'4px 22px' }}></div>
+
             </Layout>
         );
     }
