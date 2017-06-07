@@ -1,24 +1,21 @@
 .react-component-search {
     padding: 4px 8px;
-}
-
-.react-component-search > div {
     position: relative;
-    padding-right: 0;
 }
 
-.react-component-search > div > i {
+.react-component-search > i {
     position: absolute;
-    top: 15px;
-    right: 10px;
-    font-size: 16px;
+    top: 17px;
+    right: 18px;
+    font-size: 20px;
+    color: rgb(196,196,196);
 }
 
-.react-component-search > div > i.fa-times:hover {
+.react-component-search > i.fa-times:hover {
     cursor: pointer;
 }
 
-.react-component-search input {
+.react-component-search > input {
     height: 50px;
     border-radius: 0;
     display: block;
@@ -28,12 +25,16 @@
     line-height: 1.42857143;
     color: #555;
     background-color: #fff;
-    background-image: none;
     border: 1px solid #ccc;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    outline:none;
 }
 
+.react-component-search > input:focus {
+    border: 1px solid rgb(97,169,218);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}

@@ -11,7 +11,8 @@ export default class SearchInput extends Component {
 
     handleChange = e => {
         let keyword = e.target.value && e.target.value.trim();
-        this.setState({ keyword: keyword })
+        this.setState({ keyword: keyword });
+        this.props.onChange && this.props.onChange(keyword);
     };
 
     handleClear = () => {
@@ -48,5 +49,6 @@ export default class SearchInput extends Component {
 
 SearchInput.propTypes = {
     onSearch:PropTypes.func.isRequired,
+    onChange:PropTypes.func,
     placeholder:PropTypes.string
 };
