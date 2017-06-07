@@ -5,13 +5,13 @@ import './tag.less';
 
 export default class Tags extends Component {
     render() {
-        let { names, onClick } = this.props;
+        let { names, type, onClick } = this.props;
 
         return (
             <div className="react-component-tags" >
                 {
                     names.map(name => {
-                        return <Tag key={ name } name={ name } onClick={ onClick } />
+                        return <Tag key={ name } type={ type } name={ name } onClick={ onClick } />
                     })
                 }
             </div>
@@ -21,5 +21,6 @@ export default class Tags extends Component {
 
 Tags.propTypes = {
     names: PropTypes.array.isRequired,
+    type: PropTypes.string,
     onClick: PropTypes.func
 };

@@ -1,46 +1,36 @@
 import React, { PropTypes, Component } from 'react';
 
 import  { Tag,Tags }  from 'react-components';
-import Layout from '../Layout.jsx';
+import Layout from './Layout.jsx';
+import DP from './DP.jsx';
 
 export default class TagDemo extends Component {
 
     render() {
         return (
             <Layout title="标签">
-                <p>
-                    <span>1. 普通标签:</span>
-                    <div className="bs-example" data-example-id="simple-pre">
-                        <div style={ { border: '1px dashed rgb(196, 196, 196)' } }>
-                            <Tag name="绿茶" />
-                            <Tag name="红茶" />
-                            <Tag name="可口可乐" />
-                            <Tag name="雪碧" />
-                        </div>
-                        <pre> { '<div >'
-                                + '<Tag name="绿茶" />'
-                                + '<Tag name="红茶" />'
-                                + '<Tag name="可口可乐" />'
-                                + '<Tag name="雪碧" />'
-                             + '</div>' }
-                        </pre>
-                    </div>
-                </p>
-                <p>
-                    <span>2. 带onclick标签:</span>
-                    <div className="bs-example" data-example-id="simple-pre">
-                        <Tag name="CCE" onClick= { name => {  alert(name) } } />
-                        <pre> { ' <Tag name="CCE" onClick= \{ name => \{  alert(name) \} \} />' } </pre>
-                    </div>
-                </p>
+                <DP title="1. 普通标签:" code='<Tag name="绿茶" /><Tag name="红茶" /><Tag name="Coco" />'>
+                    <Tag name="绿茶" />
+                    <Tag name="红茶" />
+                    <Tag name="Coco" />
+                </DP>
 
-                <p>
-                    <span>3. 标签组:</span>
-                    <div className="bs-example" data-example-id="simple-pre">
-                        <Tags names={ [ '绿茶', '红茶', '可口可乐' ] } onClick= { name => {  alert(name) } } />
-                        <pre> { "<Tags names={ [ '绿茶', '红茶', '可口可乐' ] } onClick= { name => {  alert(name) } } />" } </pre>
-                    </div>
-                </p>
+                <DP title="2. 带onclick标签:" code='<Tag name="CCE" onClick= { name => {  alert(name) } } />'>
+                    <Tag name="CCE" onClick= { name => {  alert(name) } } />
+                </DP>
+
+                <DP title="3. 标签组:" code='<Tags names={ [ "绿茶", "红茶", "Coco" ] } onClick= { name => {  alert(name) } } />'>
+                    <Tags names={ [ "绿茶", "红茶", "Coco" ] } onClick= { name => {  alert(name) } } />
+                </DP>
+
+                <DP title="4. arrow 标签:" code='<Tag name="红茶" type="arrow" />'>
+                    <Tag name="红茶" type="arrow" />
+                </DP>
+
+                <DP title="5. arrow 标签组:" code='<Tags type="arrow" names={ [ "绿茶", "红茶", "Coco" ] } onClick= { name => {  alert(name) } } />'>
+                    <Tags type="arrow" names={ [ "绿茶", "红茶", "Coco" ] } onClick= { name => {  alert(name) } } />
+                </DP>
+
             </Layout>
         );
     }

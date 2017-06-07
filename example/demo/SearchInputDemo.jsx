@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 
 import  { SearchInput }  from 'react-components';
-import Layout from '../Layout.jsx';
+import Layout from './Layout.jsx';
 
 export default class SearchInputDemo extends Component {
 

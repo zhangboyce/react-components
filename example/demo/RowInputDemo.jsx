@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 
 import  { RowInput }  from 'react-components';
-import Layout from '../Layout.jsx';
+import Layout from './Layout.jsx';
 import { escape, translate } from 'html-escape-translate';
 
 export default class RowInputDemo extends Component {
