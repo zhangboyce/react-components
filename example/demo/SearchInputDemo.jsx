@@ -14,7 +14,9 @@ export default class SearchInputDemo extends Component {
                 </DP>
 
                 <DP title="2. 可以监听onChange事件:" code='<SearchInput placeholder="可以监听onChange事件" onChange={ keyword => { document.getElementById("msg").innerHTML = keyword; } } />'>
-                    <SearchInput placeholder="可以监听onChange事件" onChange={ keyword => { document.getElementById("msg").innerHTML = keyword; } } />
+                    <SearchInput placeholder="可以监听onChange事件"
+                                 onSearch={ keyword => { alert(keyword) } }
+                                 onChange={ keyword => { document.getElementById("msg").innerHTML = keyword; } } />
                 </DP>
                 <div id="msg" style={{ height: '30px',lineHeight:'30px',padding:'4px 22px' }}></div>
             </Layout>
