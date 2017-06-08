@@ -14,7 +14,7 @@
 
 .react-component-card img {
     width: 100%;
-    height: auto;
+    height: 168px;
 }
 
 .react-component-card h4 {
@@ -68,7 +68,7 @@
 
 .react-component-card > div > div > span > i {
     font-style: normal;
-    color: rgb(89,89,90);
+    color: #797979;
 }
 
 .react-component-card > div > div:nth-of-type(2) {
@@ -86,4 +86,70 @@
 
 .react-component-cards .react-component-card {
     float: left;
+}
+
+/*SimpleCard  样式*/
+.react-component-card.simple {
+    width: 25%;
+    padding: 12px 20px!important;
+    border: 1px solid rgb(204,204,204);
+    box-shadow: none;
+}
+
+.react-component-card.simple:hover {
+    border: 1px solid rgb(97,169,218);
+    cursor: default;
+}
+
+.react-component-card.simple img {
+    width: 91px;
+    height: 91px;
+}
+
+.react-component-card.simple > div:nth-of-type(1) {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.react-component-card.simple > div > a {
+    text-align: center;
+    display: inline-block;
+    width: 40%;
+    color: white;
+}
+
+.react-component-card.simple > div > a > span {
+    display: inline-block;
+    width: 70%;
+    background-color: rgb(97,169,218);
+    border-radius: 5px;
+}
+
+.react-component-card.simple > div > a > span:hover {
+    cursor: pointer;
+    background-color: rgb(80,150,200);
+    font-size: 15px;
+}
+
+.react-component-card.simple > div:nth-of-type(2) {
+    padding: 0;
+}
+
+.react-component-card.simple > div:nth-of-type(2) > h4 {
+    line-height: 40px;
+    margin: 0;
+}
+
+.react-component-card.simple > div:nth-of-type(2) > p {
+    color: rgb(153,153,153);
+}
+
+.react-component-card.simple > div > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 0;
 }
