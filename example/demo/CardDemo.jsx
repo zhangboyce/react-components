@@ -3,7 +3,7 @@ import React,{ Component } from 'react';
 import Layout from './Layout.jsx';
 import DP from './DP.jsx';
 
-import { Card,Cards,SimpleCard } from 'react-components'
+import { Card,Cards,SimpleCard,RotateCards } from 'react-components'
 
 export default class CardDemo extends Component {
 
