@@ -1,9 +1,7 @@
 import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-
 import './public/css/main.less';
-import './public/css/bootstrap.docs.css';
 
 import ProgressBarDemo from './demo/ProgressBarDemo.jsx';
 import RowInputDemo from './demo/RowInputDemo.jsx';
