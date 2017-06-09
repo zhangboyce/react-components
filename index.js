@@ -8,6 +8,7 @@ import Tags from './components/tag/Tags.jsx';
 import SearchInput from './components/search/SearchInput.jsx';
 import Card from './components/card/Card.jsx';
 import Cards from './components/card/Cards.jsx';
+import SimpleCard from './components/card/SimpleCard.jsx';
 import Slider from './components/banner/Slider.jsx';
 import SliderBanner from './components/banner/SliderBanner.jsx';
 
@@ -20,6 +21,7 @@ module.exports = {
     SearchInput,
     Card,
     Cards,
+    SimpleCard,
     Slider,
     SliderBanner
 };

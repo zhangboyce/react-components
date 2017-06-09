@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 const toString = Object.prototype.toString;
 const blank = "  ";
 const new_line = "\r\n";
+let clipboard;
 
 export default class DP extends Component {
 
@@ -77,7 +78,16 @@ export default class DP extends Component {
         }
     };
 
+    componentDidMount = () => {
+        clipboard = new Clipboard('.btn-clipboard');
+    };
+
+    componentWillUnmount = () => {
+        clipboard && clipboard.destroy();
+    };
+
     render () {
+        let code = this.jsxToString(this.props.children);
         return (
             <div style={ { "marginBottom": '50px' } }>
                 <span>{ this.props.title }</span>
@@ -85,11 +95,18 @@ export default class DP extends Component {
                     <div style={ { border: '1px dashed rgb(226, 226, 226)' } }>
                         { this.props.children }
                     </div>
-                    <pre>
-                        <code className="xml">
-                            { this.jsxToString(this.props.children) }
-                        </code>
-                    </pre>
+                    <div className="zero-clipboard">
+                        <span className="btn-clipboard"
+                              onMouseOver={ e => { $(e.target).addClass('tooltipped tooltipped-s') } }
+                              onMouseLeave={ e => { $(e.target).attr('aria-label', 'Copy to clipboard!') } }
+                              onClick={ e => { $(e.target).attr('aria-label', 'Copied!') } }
+                              aria-label="Copy to clipboard!"
+                              data-clipboard-text={ code } >
+
+                            Copy
+                        </span>
+                    </div>
+                    <pre><code className="xml">{ code }</code></pre>
                 </div>
             </div>
         );

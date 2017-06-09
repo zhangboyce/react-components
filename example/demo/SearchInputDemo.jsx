@@ -9,11 +9,11 @@ export default class SearchInputDemo extends Component {
     render() {
         return (
             <Layout title="搜索框">
-                <DP title="1. 普通搜索框:" code="<SearchInput onSearch={ keyword => { alert(keyword) } } />">
+                <DP title="1. 普通搜索框:">
                     <SearchInput onSearch={ keyword => { alert(keyword) } } />
                 </DP>
 
-                <DP title="2. 可以监听onChange事件:" code='<SearchInput placeholder="可以监听onChange事件" onChange={ keyword => { document.getElementById("msg").innerHTML = keyword; } } />'>
+                <DP title="2. 可以监听onChange事件:">
                     <SearchInput placeholder="可以监听onChange事件"
                                  onSearch={ keyword => { alert(keyword) } }
                                  onChange={ keyword => { document.getElementById("msg").innerHTML = keyword; } } />
