@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
-import './row-input.css';
+import './row-input.less';
 
 const defaultValidateRegex = {
     'email': {
@@ -162,7 +162,7 @@ export default class RowInput extends Component {
             placeholder } = this.props;
 
         return (
-            <div className={ "row " + name || '' }>
+            <div className="react-component-input row">
                 {
                     label &&
                     <label
@@ -176,7 +176,6 @@ export default class RowInput extends Component {
                            onBlur={ this.handleEvent('onBlur', this.__handleBlur__) }
                            onChange={ this.handleEvent('onChange', this.__handleChange__) }
                            type={ type || 'text' }
-                           className="form-control"
                            placeholder={ placeholder } />
                 </div>
                 <div className="msg ">

@@ -1,9 +1,7 @@
 'use strict';
 import React, { Component, PropTypes } from 'react';
 import './tag.less';
-
-const TYPE_COMMON = 'common';
-const TYPE_ARROW = 'arrow';
+import * as types from './constant';
 
 export default class Tag extends Component {
 
@@ -21,9 +19,10 @@ export default class Tag extends Component {
 
     __classname__ = () => {
         let classes = [];
-        let type = this.props.type || TYPE_COMMON;
-        if (type === TYPE_COMMON) classes.push('react-component-tag');
-        if (type === TYPE_ARROW) classes.push('react-component-arrow-tag');
+        let type = this.props.type;
+        if (type === types.TAG_TYPE_COMMON) classes.push('react-component-tag');
+        if (type === types.TAG_TYPE_ARROW) classes.push('react-component-arrow-tag');
+        if (type === types.TAG_TYPE_HONEYCOMB) classes.push('react-component-honeycomb-tag');
         if (this.state.selected) classes.push('selected');
 
         return classes.join(' ').trim();
@@ -31,7 +30,7 @@ export default class Tag extends Component {
 
     render() {
         return (
-            <span className={ this.__classname__() }
+            <span ref="__this__" className={ this.__classname__() }
                   onClick={ this.handleOnClick(this.props.name) } >
                 { this.props.name }
             </span>
@@ -41,6 +40,14 @@ export default class Tag extends Component {
 
 Tag.propTypes = {
     name: PropTypes.string.isRequired,
-    type: PropTypes.oneOf([TYPE_COMMON, TYPE_ARROW]),
+    type: PropTypes.oneOf([
+        types.TAG_TYPE_COMMON,
+        types.TAG_TYPE_ARROW,
+        types.TAG_TYPE_HONEYCOMB
+    ]),
     onClick: PropTypes.func
+};
+
+Tag.defaultProps = {
+    type: types.TAG_TYPE_COMMON
 };

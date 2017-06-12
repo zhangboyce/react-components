@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
-import './card.css';
+import './card.less';
 
 export default class SimpleCard extends Component {
 

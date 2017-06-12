@@ -97,7 +97,7 @@ export default class DP extends Component {
                     </div>
                     <div className="zero-clipboard">
                         <span className="btn-clipboard"
-                              onMouseOver={ e => { $(e.target).addClass('tooltipped tooltipped-s') } }
+                              onMouseOver={ e => { $(e.target).addClass('tooltipped tooltipped-n') } }
                               onMouseLeave={ e => { $(e.target).attr('aria-label', 'Copy to clipboard!') } }
                               onClick={ e => { $(e.target).attr('aria-label', 'Copied!') } }
                               aria-label="Copy to clipboard!"

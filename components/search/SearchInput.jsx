@@ -1,6 +1,6 @@
 'use strict';
 import React, { Component, PropTypes } from 'react';
-import './search.css';
+import './search.less';
 
 export default class SearchInput extends Component {
 

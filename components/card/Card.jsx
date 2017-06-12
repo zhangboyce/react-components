@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
-import './card.css';
+import './card.less';
 
 export default class Card extends Component {
 
@@ -11,13 +11,14 @@ export default class Card extends Component {
           <div className="react-component-card">
               <img src={ cover } />
               <div>
-                  <h4>{ title }</h4>
-                  <div>{ author || '' }</div>
+                  <h4>
+                      { title }
+                      <div><span>{ author || '' }</span><span>{ createdDate || '' }</span></div>
+                  </h4>
                   <p>{ desc }</p>
                   <div>
-                      <span className="fa fa-eye">&nbsp;<i>{ readNum || '-' }</i></span>
-                      <span className="fa fa-heart">&nbsp;<i>{ likeNum || '-' }</i></span>
-                      <span className="fa fa-calendar-check-o">&nbsp;<i>{ createdDate || '-' }</i></span>
+                      <i className="fa fa-eye">&nbsp;{ readNum || '-' }</i>
+                      <i className="fa fa-heart">&nbsp;{ likeNum || '-' }</i>
                   </div>
               </div>
           </div>
