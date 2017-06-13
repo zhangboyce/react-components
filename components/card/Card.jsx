@@ -13,12 +13,13 @@ export default class Card extends Component {
               <div>
                   <h4>
                       { title }
-                      <div><span>{ author || '' }</span><span>{ createdDate || '' }</span></div>
+                      <div><span>{ author || '' }</span></div>
                   </h4>
                   <p>{ desc }</p>
                   <div>
                       <i className="fa fa-eye">&nbsp;{ readNum || '-' }</i>
                       <i className="fa fa-heart">&nbsp;{ likeNum || '-' }</i>
+                      <i className="fa fa-calendar-plus-o">&nbsp;{ createdDate || '-' }</i>
                   </div>
               </div>
           </div>

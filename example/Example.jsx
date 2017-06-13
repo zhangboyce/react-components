@@ -9,7 +9,7 @@ import FormGroupDemo from './demo/FormGroupDemo.jsx';
 import TagDemo from './demo/TagDemo.jsx';
 import SearchInputDemo from './demo/SearchInputDemo.jsx';
 import CardDemo from './demo/CardDemo.jsx';
-import SliderBannerDemo from './demo/SliderBannerDemo.jsx';
+import SliderDemo from './demo/SliderDemo.jsx';
 
 ReactDOM.render(
     <Router history={ browserHistory }>
@@ -20,6 +20,6 @@ ReactDOM.render(
         <Route path="tag" component={ TagDemo } />
         <Route path="searchinput" component={ SearchInputDemo } />
         <Route path="card" component={ CardDemo } />
-        <Route path="sliderbanner" component={ SliderBannerDemo } />
+        <Route path="slider" component={ SliderDemo } />
 
     </Router>, document.getElementById('main'));

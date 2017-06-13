@@ -9,16 +9,8 @@ export default class TagDemo extends Component {
     render() {
         return (
             <Layout title="标签">
-                <DP title="8. 蜂窝标签组:">
-                    <Tags>
-                        <Tag type="honeycomb" name="绿茶" />
-                        <Tag type="honeycomb" name="红茶" />
-                        <Tag type="honeycomb" name="Coco" />
-                    </Tags>
-                </DP>
-
                 <DP title="1. 普通标签:">
-                    <Tag name="绿茶" />
+                    <Tag name="绿茶" style={{borderRadius: 'inherit'}}/>
                     <Tag name="红茶" />
                     <Tag name="Coco" />
                 </DP>
