@@ -23,7 +23,7 @@ export default class DP extends Component {
             for (let k in v) {
                 result += `${k}: ${ this.__toString__(v[k]) }, `;
             }
-            return result.substring(0, result.length -2) + ' }';
+            return  '{' +  result.substring(0, result.length -2) + ' }}';
         }
         if (this.__isArray__(v)) return '[' + v.map(it => this.__toString__(it)).toString() + ']';
         if (this.__isFunction__(v)) {

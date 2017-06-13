@@ -19,7 +19,7 @@ export default class CardDemo extends Component {
                 </DP>
                 
                 <DP title="2. 卡片组:">
-                    <Cards rowCols={ 4 }>
+                    <Cards rowCols={ 3 }>
                         <Card cover="/public/images/card/002.jpg"
                               title="男人7种行为等同于说“我爱你”！你看懂了吗？"
                               desc="阅读本文前，请您先点击本文上面的蓝色字体“教你学一点说话技巧”再点击“关注”，这样您就可以继续免费收到文章了"

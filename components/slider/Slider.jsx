@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
-import './banner.less';
+import './slider.less';
 
 export default class Slider extends Component {
 
@@ -12,7 +12,7 @@ export default class Slider extends Component {
     render() {
         let { image, onClick } = this.props;
         return (
-            <li className={ onClick ? "pointer": "" } key={ image } onClick={ this.handleOnClick }>
+            <li className={ onClick ? "react-component-slider pointer": "react-component-slider" } key={ image } onClick={ this.handleOnClick }>
                 <img src={ image } />
                 <div className={ this.props.children ? "inner": "" }>
                     { this.props.children }

@@ -13,6 +13,7 @@ import SubscribeCard from './components/card/SubscribeCard.jsx';
 import Slider from './components/banner/Slider.jsx';
 import SliderBanner from './components/banner/SliderBanner.jsx';
 
+
 module.exports = {
     ProgressBar,
     RowInput,
@@ -25,5 +26,5 @@ module.exports = {
     SimpleCard,
     SubscribeCard,
     Slider,
-    SliderBanner
+    Sliders
 };

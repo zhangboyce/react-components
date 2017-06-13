@@ -30,7 +30,7 @@ export default class Tag extends Component {
 
     render() {
         return (
-            <span ref="__this__" className={ this.__classname__() }
+            <span ref="__this__" className={ this.__classname__()  } style={ this.props.style }
                   onClick={ this.handleOnClick(this.props.name) } >
                 { this.props.name }
             </span>
@@ -40,6 +40,7 @@ export default class Tag extends Component {
 
 Tag.propTypes = {
     name: PropTypes.string.isRequired,
+    style: PropTypes.object,
     type: PropTypes.oneOf([
         types.TAG_TYPE_COMMON,
         types.TAG_TYPE_ARROW,

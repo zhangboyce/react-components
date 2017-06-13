@@ -8,7 +8,7 @@ const links = {
     "tag": "标签",
     "searchinput": "搜索框",
     "card":"卡片",
-    "sliderbanner": "轮播Slider"
+    "slider": "轮播Slider"
 };
 
 export default class Layout extends Component {
