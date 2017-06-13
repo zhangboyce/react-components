@@ -48,7 +48,7 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx'],
         alias:{
-            "react-components":development ? path.resolve(__dirname, '../index.js') : path.resolve(__dirname, '../dist/react-components.min.js')
+            "react-components":development ? path.resolve(__dirname, '../components/main.js') : path.resolve(__dirname, '../index.js')
         }
     },
     plugins: [

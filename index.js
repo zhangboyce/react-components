@@ -10,9 +10,8 @@ import Card from './components/card/Card.jsx';
 import Cards from './components/card/Cards.jsx';
 import SimpleCard from './components/card/SimpleCard.jsx';
 import SubscribeCard from './components/card/SubscribeCard.jsx';
-import Slider from './components/banner/Slider.jsx';
-import SliderBanner from './components/banner/SliderBanner.jsx';
-
+import Slider from './components/slider/Slider.jsx';
+import Sliders from './components/slider/Sliders.jsx';
 
 module.exports = {
     ProgressBar,
