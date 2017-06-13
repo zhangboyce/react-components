@@ -1,20 +1,30 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
-import './card.css';
+import './card.less';
 
 export default class SubscribeCard extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { isClick: false }
+    }
+
+    handleOnClick = () => {
+        this.setState({ isClick:!this.state.isClick });
+        return this.props.onClick();
+    }
 
     render() {
-        let { cover, author, desc, readNum, likeNum, articleNum, btnName  } = this.props;
+        let { cover, author, desc, readNum, likeNum, articleNum  } = this.props;
         return (
             <div className="react-component-card subscribe">
-                <div>
-                    <img src={ cover } />
-                    <a href="javascript:;" onClick={ this.props.onClick }>
-                       <span>{ btnName }</span>
-                    </a>
-                </div>
+                {
+                    !this.state.isClick && <a href="javascript:;" onClick={ this.handleOnClick }><span>订阅</span></a>
+                }
+                {
+                    this.state.isClick && <a href="javascript:;" onClick={ this.handleOnClick } style={{ color:'#808080',border:'1px solid #808080' }}><span>取消订阅</span></a>
+                }
+                <img src={ cover } />
                 <div>
                     <h4>{ author || '' }</h4>
                     <p>{ desc }</p>
@@ -29,13 +39,12 @@ export default class SubscribeCard extends Component {
     }
 }
 
-SimpleCard.propTypes = {
+SubscribeCard.propTypes = {
     cover:PropTypes.string.isRequired,
     onClick:PropTypes.func.isRequired,
     author:PropTypes.string,
     desc:PropTypes.string,
     readNum:PropTypes.string,
     likeNum:PropTypes.string,
-    articleNum:PropTypes.string,
-    btnName:PropTypes.string
+    articleNum:PropTypes.string
 };
