@@ -1,4 +1,4 @@
-
+@import "../../public/css/main.less";
 .circle(@color) {
     border-radius: 50%;
     width: 30px;
@@ -39,13 +39,13 @@
     font-size: 14px;
     font-style: inherit;
     line-height: 28px;
-    color: #fff;
-    .circle(lightgray);
+    color: @white;
+    .circle(@light-gray);
 }
 
 .progress-bar-container > ul > li.active > div > i,
 .progress-bar-container > ul > li.passed > div > i {
-    .circle(teal);
+    .circle(@purple);
 }
 
 .progress-bar-container > ul > li > div > p {
@@ -54,7 +54,7 @@
     font-size: 14px;
     line-height: 20px;
     margin-top: -8px;
-    color: #a5a5a5;
+    color: @gray;
 }
 
 .progress-bar-container > ul > li > i {
@@ -63,14 +63,14 @@
     height: 2px;
     margin-top: 14px;
     vertical-align: middle;
-    background-color: #ededed;
+    background-color: @light-gray;
 }
 
 .progress-bar-container > ul > li.passed > i {
-    background-color: teal;
+    background-color: @purple;
 }
 
 .progress-bar-container > ul > li.active > i {
-    background: linear-gradient(to right, teal, lightgray);
-    background: -prefix-linear-gradient(right, teal, lightgray);
+    background: linear-gradient(to right, @purple, @light-gray);
+    background: -prefix-linear-gradient(right, @purple, @light-gray);
 }

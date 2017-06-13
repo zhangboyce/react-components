@@ -14,13 +14,10 @@ npm run build
 # Example
 
 ```
-git clone git@github.com:zhangboyce/react-components.git
+cd example
 npm install
 npm run bower
-cd example
-bower install
-cd ..
-npm run example
+npm run server
 
 http://localhost:8008
 

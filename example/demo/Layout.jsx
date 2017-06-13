@@ -8,7 +8,7 @@ const links = {
     "tag": "标签",
     "searchinput": "搜索框",
     "card":"卡片",
-    "sliderbanner": "轮播Banner"
+    "sliderbanner": "轮播Slider"
 };
 
 export default class Layout extends Component {
@@ -17,7 +17,17 @@ export default class Layout extends Component {
         return this.props.title === title ? 'active': '';
     };
 
+    __highlight_code__ = () => {
+        $(document).ready(function() {
+            hljs.tabReplace = '  ';
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+    };
     render () {
+        this.__highlight_code__();
+
         let linkComps = [];
         for (let prop in links) {
             if (links.hasOwnProperty(prop)) {
