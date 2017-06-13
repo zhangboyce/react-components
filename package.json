@@ -2,7 +2,7 @@
   "name": "react-components-cce",
   "version": "0.1.1",
   "main": "index.js",
-  "description": "A ui library to react.",
+  "description": "A ui library built by react.",
   "license": "MIT",
   "repository": "zhangboyce/react-components",
   "scripts": {
