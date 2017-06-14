@@ -28,7 +28,10 @@ export default class SubscribeCard extends Component {
                 {
                     this.state.isClick && <a href="javascript:;" onClick={ this.handleOnClick } style={{ color:'#808080',border:'1px solid #808080' }}><span>取消订阅</span></a>
                 }
-                <img src={ cover } />
+                <section>
+                    <img src={ cover } />
+                </section>
+
                 <div>
                     <h4>{ author || '' }</h4>
                     <p>{ desc }</p>
