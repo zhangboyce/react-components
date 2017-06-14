@@ -30,7 +30,7 @@ export default class Tag extends Component {
 
     render() {
         return (
-            <span ref="__this__" className={ this.__classname__()  } style={ this.props.style }
+            <span className={ this.__classname__()  } style={ this.props.style }
                   onClick={ this.handleOnClick(this.props.name) } >
                 { this.props.name }
             </span>

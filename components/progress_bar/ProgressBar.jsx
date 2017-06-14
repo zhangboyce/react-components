@@ -5,16 +5,8 @@ import './progress-bar.less';
 
 export default class ProgressBar extends Component {
 
-    componentDidMount() {
-        let { stepWidth, initColor, passedColor } = this.props;
-        let $this = $(this.refs._this_);
-        if (stepWidth) {
-            $this.find('ul > li > i').css('width', stepWidth);
-        }
-    }
-
     render () {
-        const { steps, current } = this.props;
+        const { steps, current, stepWidth } = this.props;
 
         let className = i => (i < current) ? 'passed': (i === current) ? 'active' : '';
         let stepsComps = [];
@@ -26,14 +18,14 @@ export default class ProgressBar extends Component {
                         <p>{ step }</p>
                     </div>
                     {
-                        (index != steps.length - 1 ) && <i />
+                        (index != steps.length - 1 ) && <i style={{ width: stepWidth }} />
                     }
                 </li>
             );
         });
 
         return (
-            <div ref="_this_" className="progress-bar-container">
+            <div className="progress-bar-container">
                 {
                     stepsComps && stepsComps.length != 0 &&
                     <ul>
@@ -51,4 +43,8 @@ ProgressBar.propTypes = {
     passedColor: PropTypes.string,
     initColor: PropTypes.string,
     current: PropTypes.number.isRequired
+};
+
+ProgressBar.defaultProps = {
+    stepWidth: '150px'
 };

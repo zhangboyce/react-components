@@ -15,9 +15,9 @@ export default class SubscribeCard extends Component {
     }
 
     render() {
-        let { cover, author, desc, readNum, likeNum, articleNum  } = this.props;
+        let { style, cover, author, desc, readNum, likeNum, articleNum  } = this.props;
         return (
-            <div className="react-component-card subscribe">
+            <div style={ style } className="react-component-card subscribe">
                 {
                     !this.state.isClick && <a href="javascript:;" onClick={ this.handleOnClick }><span>订阅</span></a>
                 }
@@ -42,6 +42,7 @@ export default class SubscribeCard extends Component {
 SubscribeCard.propTypes = {
     cover:PropTypes.string.isRequired,
     onClick:PropTypes.func.isRequired,
+    style:PropTypes.object,
     author:PropTypes.string,
     desc:PropTypes.string,
     readNum:PropTypes.string,

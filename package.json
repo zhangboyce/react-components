@@ -1,6 +1,6 @@
 {
   "name": "react-components-cce",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "description": "A ui library built by react.",
   "license": "MIT",
@@ -10,12 +10,10 @@
     "build": "webpack -p --config webpack.config.js --progress",
     "watch": "webpack --config webpack.config.js --watch --inline --progress"
   },
-  "dependencies": {
-    "react": "^15.0.2",
-    "less": "^2.7.2",
-    "bower": "^1.8.0"
-  },
   "devDependencies": {
+    "react": "^15.4.2",
+    "less": "^2.7.2",
+    "bower": "^1.8.0",
     "style-loader": "^0.13.1",
     "css-loader": "^0.26.1",
     "less-loader": "^4.0.3",

@@ -36,8 +36,8 @@ export default class Tags extends Component {
         let children = this.props.children;
         children = Object.prototype.toString.call(children) === "[object Array]" ? children : [ children ];
         children = children.filter((child, pos) => children.indexOf(child) == pos);
-        children = children.map(child => React.cloneElement(child, {
-            key: child.props.name,
+        children = children.map((child, index) => React.cloneElement(child, {
+            key: index,
             onClick: this.handleOnClickTag(child)
         }));
         return (
