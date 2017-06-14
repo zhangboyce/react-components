@@ -15,7 +15,7 @@ export default class SliderBannerDemo extends Component {
         return (
             <Layout title="轮播Slider">
                 <DP title="1. 默认轮播Slider:">
-                    <Sliders>
+                    <Sliders id="slider_1">
                         <Slider image={ images[2] } >
                             <div>
                                 <h3>可口可乐喊你去听音乐节</h3>
@@ -26,7 +26,7 @@ export default class SliderBannerDemo extends Component {
                 </DP>
 
                 <DP title="2. 带onClick的Slider:">
-                    <Sliders slider={{ arrows: {}}} >
+                    <Sliders id="slider_2" slider={{ arrows: {}}} >
                         <Slider image={ images[1] } onClick={ () => { alert(images[0]); } } />
                         <Slider image={ images[2] } />
                         <Slider image={ images[3] } />
@@ -34,7 +34,7 @@ export default class SliderBannerDemo extends Component {
                 </DP>
 
                 <DP title="3. 自定义宽度和高度的SliderBanner:">
-                    <Sliders width="900px" height="400px">
+                    <Sliders id="slider_3" width="900px" height="400px">
                         <Slider image={ images[2] } />
                         <Slider image={ images[3] } />
                     </Sliders>

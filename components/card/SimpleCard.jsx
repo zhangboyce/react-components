@@ -6,9 +6,9 @@ import './card.less';
 export default class SimpleCard extends Component {
 
     render() {
-        let { cover, author, desc, readNum, likeNum, articleNum, btnName  } = this.props;
+        let { style, cover, author, desc, readNum, likeNum, articleNum, btnName  } = this.props;
         return (
-            <div className="react-component-card simple">
+            <div style={ style } className="react-component-card simple">
                 <div>
                     <img src={ cover } />
                     <a href="javascript:;" onClick={ this.props.onClick }>
@@ -32,6 +32,7 @@ export default class SimpleCard extends Component {
 SimpleCard.propTypes = {
     cover:PropTypes.string.isRequired,
     onClick:PropTypes.func.isRequired,
+    style:PropTypes.object,
     author:PropTypes.string,
     desc:PropTypes.string,
     readNum:PropTypes.string,

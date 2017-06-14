@@ -23,16 +23,14 @@ const defaultSlider = {
 export default class Sliders extends Component {
 
     __set__ = (name, value) => {
-        let _this_ = this.refs._this_;
         if (value != undefined && value != '' && value.trim() != '') {
-            $(_this_).parent('.unslider').css(name, value);
+            $('#' + this.props.id).parent('.unslider').css(name, value);
         }
     };
 
     componentDidMount() {
-        let _this_ = this.refs._this_;
         let slider = { ...defaultSlider, ...this.props.slider };
-        $(_this_).unslider(slider);
+        $('#' + this.props.id).unslider(slider);
         let { width, height } = this.props;
         this.__set__('width', width);
         this.__set__('height', height);
@@ -40,7 +38,7 @@ export default class Sliders extends Component {
 
     render() {
         return (
-            <div ref="_this_" className="react-component-sliders">
+            <div id={ this.props.id } className="react-component-sliders">
                 <ul>{ this.props.children }</ul>
             </div>
         );
@@ -48,6 +46,7 @@ export default class Sliders extends Component {
 };
 
 Sliders.propTypes = {
+    id: PropTypes.string.isRequired,
     width: PropTypes.string,
     height: PropTypes.string,
     slider: PropTypes.object
