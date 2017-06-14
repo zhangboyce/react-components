@@ -1,6 +1,7 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import './row-input.less';
 
 const defaultValidateRegex = {
@@ -46,14 +47,11 @@ export default class RowInput extends Component {
         super(props);
         this.state = { msg: '', validated: false };
 
-        let name = props.name;
-        this.__defineGetter__('val', () => {
-            return this.refs[name].value;
-        });
+        this.__defineGetter__('val', () => $(ReactDOM.findDOMNode(this)).find('input').val());
     }
 
     validate = () => {
-        let value = this.refs[this.props.name].value;
+        let value = $(ReactDOM.findDOMNode(this)).find('input').val();
         value = (value && value.trim()) || '';
 
         this.setState({ validated: true });
@@ -171,7 +169,6 @@ export default class RowInput extends Component {
                 <div className={ 'col-xs-8 col-sm-8 col-md-6 col-lg-4 ' + (inputClassName || '')}>
                     { this.props.children }
                     <input name={ name }
-                           ref={ name }
                            value={ value }
                            onBlur={ this.handleEvent('onBlur', this.__handleBlur__) }
                            onChange={ this.handleEvent('onChange', this.__handleChange__) }

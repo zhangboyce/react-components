@@ -2,8 +2,9 @@
 
 import React, { Component, PropTypes } from 'react';
 import './card.less';
+import PseudoClassComponentWrapper from '../PseudoClassComponentWrapper.jsx';
 
-export default class Card extends Component {
+class Card extends Component {
 
     render() {
         let { style, cover, title, author, desc, readNum, likeNum, createdDate  } = this.props;
@@ -40,3 +41,5 @@ Card.propTypes = {
     createdDate:PropTypes.string,
     onClick:PropTypes.func
 };
+
+export default PseudoClassComponentWrapper(Card);

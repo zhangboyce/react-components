@@ -14,9 +14,7 @@ export default class SubscribeCard extends Component {
         return this.props.onClick();
     };
 
-    handleFilter = (num) => {
-        return num = num >= 1000 ? (num / 1000).toFixed(1) + 'k+' : num;
-    };
+    handleFilter = num => num >= 1000 ? (num / 1000).toFixed(1) + 'k+' : num;
 
     render() {
         let { style, cover, author, desc, readNum, likeNum, articleNum  } = this.props;

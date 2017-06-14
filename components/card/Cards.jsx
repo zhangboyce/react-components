@@ -20,8 +20,6 @@ export default class Cards extends Component {
             style: { width: width, margin: margin }
         }));
 
-        console.log(children);
-
         return (
             <div className="react-component-cards">
                 { children }

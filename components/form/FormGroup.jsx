@@ -9,9 +9,7 @@ export default class FormGroup extends Component {
 
     validate = () => {
         React.Children.map(this.props.children, child => {
-            console.log(child.ref);
-            console.log(this.refs);
-            console.log(child.props.name, this.refs[child.ref].val);
+
         });
     };
 

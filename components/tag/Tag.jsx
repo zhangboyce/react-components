@@ -2,9 +2,9 @@
 import React, { Component, PropTypes } from 'react';
 import './tag.less';
 import * as types from './constant';
+import PseudoClassComponentWrapper from '../PseudoClassComponentWrapper.jsx';
 
-export default class Tag extends Component {
-
+class Tag extends Component {
     constructor(props) {
         super(props);
         this.state = { selected: false };
@@ -36,7 +36,7 @@ export default class Tag extends Component {
             </span>
         );
     }
-};
+}
 
 Tag.propTypes = {
     name: PropTypes.string.isRequired,
@@ -52,3 +52,5 @@ Tag.propTypes = {
 Tag.defaultProps = {
     type: types.TAG_TYPE_COMMON
 };
+
+export default PseudoClassComponentWrapper(Tag);

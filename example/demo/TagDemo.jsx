@@ -57,6 +57,11 @@ export default class TagDemo extends Component {
                         <Tag type="honeycomb" name="Coco" />
                     </Tags>
                 </DP>
+                <DP title="9. 自定义标签style:">
+                    <Tags>
+                        <Tag type="common" name="绿茶" style={{ width: '200px', 'background-color': 'blue', ':hover': { width: '1000px', 'background-color': 'red' } }}/>
+                    </Tags>
+                </DP>
             </Layout>
         );
     }
