@@ -9,7 +9,7 @@ import SearchInput from './search/SearchInput.jsx';
 import Card from './card/Card.jsx';
 import Cards from './card/Cards.jsx';
 import SimpleCard from './card/SimpleCard.jsx';
-import RotateCards from './card/RotateCards.jsx';
+import SubscribeCard from './card/SubscribeCard.jsx';
 import Slider from './slider/Slider.jsx';
 import Sliders from './slider/Sliders.jsx';
 
@@ -23,7 +23,7 @@ module.exports = {
     Card,
     Cards,
     SimpleCard,
-    RotateCards,
+    SubscribeCard,
     Slider,
     Sliders
 };
