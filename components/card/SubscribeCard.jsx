@@ -12,7 +12,11 @@ export default class SubscribeCard extends Component {
     handleOnClick = () => {
         this.setState({ isClick:!this.state.isClick });
         return this.props.onClick();
-    }
+    };
+
+    handleFilter = (num) => {
+        return num = num >= 1000 ? (num / 1000).toFixed(1) + 'k+' : num;
+    };
 
     render() {
         let { cover, author, desc, readNum, likeNum, articleNum  } = this.props;
@@ -29,9 +33,9 @@ export default class SubscribeCard extends Component {
                     <h4>{ author || '' }</h4>
                     <p>{ desc }</p>
                     <div>
-                        <span className="fa fa-eye">&nbsp;<i>{ readNum || '-' }</i></span>
-                        <span className="fa fa-heart">&nbsp;<i>{ likeNum || '-' }</i></span>
-                        <span className="fa fa-file-text-o">&nbsp;<i>{ articleNum || '-' }</i></span>
+                        <span className="fa fa-eye">&nbsp;<i>{ this.handleFilter(readNum) || '-' }</i></span>
+                        <span className="fa fa-heart">&nbsp;<i>{ this.handleFilter(likeNum) || '-' }</i></span>
+                        <span className="fa fa-file-text-o">&nbsp;<i>{ this.handleFilter(articleNum) || '-' }</i></span>
                     </div>
                 </div>
             </div>
