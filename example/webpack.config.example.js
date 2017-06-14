@@ -2,7 +2,6 @@
 var path = require('path');
 var webpack = require('webpack');
 var node_modules = path.resolve(__dirname, './node_modules');
-var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 var development = process.env.NODE_ENV == 'development';
 
 module.exports = {
@@ -48,12 +47,11 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx'],
         alias:{
-            "react-components":development ? path.resolve(__dirname, '../components/main.js') : path.resolve(__dirname, '../index.js')
+            "react-components":development ? path.resolve(__dirname, '../components/index.js') : path.resolve(__dirname, '../index.js')
         }
     },
     plugins: [
         new webpack.NoEmitOnErrorsPlugin()
-        //new UglifyJSPlugin()
     ],
     stats: {
         colors: true

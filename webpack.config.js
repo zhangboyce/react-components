@@ -1,16 +1,15 @@
 'use strict';
 
-// config/webpack.config.js
 var path = require('path');
 var webpack = require('webpack');
 var node_modules = path.resolve(__dirname, './node_modules');
-var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-    entry: path.resolve(path.resolve(__dirname), './components/main.js'),
+    entry: path.resolve(path.resolve(__dirname), './components/index.js'),
     output: {
         path: path.resolve(__dirname, '.'),
-        filename: 'index.js'
+        filename: 'index.js',
+        libraryTarget: 'umd2'
     },
     module: {
         rules: [
@@ -42,41 +41,10 @@ module.exports = {
                         { loader: 'css-loader' },
                         { loader: 'less-loader' }
                     ]
-                },
-                {
-                    test:/\.(jpg|png|gif|jpeg)?$/,
-                    use: [ { loader: 'url-loader' } ]
-                },
-                {
-                    test:/\.svg(\?v=\d+\.\d+\.\d+)?$/,
-                    use: [ { loader: 'file-loader?mimetype=image/svg+xml' } ]
-                },
-                {
-                    test:/\.woff(\?v=\d+\.\d+\.\d+)?$/,
-                    use: [ { loader: 'file-loader?mimetype=application/font-woff' } ]
-                },
-                {
-                    test:/\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-                    use: [ { loader: 'file-loader?mimetype=application/font-woff' } ]
-                },
-                {
-                    test:/\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-                    use: [ { loader: 'file-loader?mimetype=application/octet-stream' } ]
-                },
-                {
-                    test:/\.eot(\?v=\d+\.\d+\.\d+)?$/,
-                    use: [ { loader: 'file-loader' } ]
                 }
             ]
     },
     resolve: {
-        extensions: ['.js', '.jsx']
-    },
-    plugins: [
-        new webpack.NoEmitOnErrorsPlugin()
-        //new UglifyJSPlugin()
-    ],
-    stats: {
-        colors: true
+        extensions: ['.js', '.jsx', '.less', '.css']
     }
 };
