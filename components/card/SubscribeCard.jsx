@@ -36,7 +36,7 @@ export default class SubscribeCard extends Component {
                     <div>
                         <span className="fa fa-eye">&nbsp;<i>{ this.handleFilter(readNum) || '-' }</i></span>
                         <span className="fa fa-heart">&nbsp;<i>{ this.handleFilter(likeNum) || '-' }</i></span>
-                        <span className="fa fa-file-text-o">&nbsp;<i>{ this.handleFilter(articleNum) || '-' }</i></span>
+                        <span className="fa fa-file-text-o">&nbsp;<i>{ this.handleFilter(articleNum)+'篇' || '-' }</i></span>
                     </div>
                 </div>
             </div>
