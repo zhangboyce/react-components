@@ -9,8 +9,15 @@
     <link rel="stylesheet" href="./public/vendor/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="./public/css/bootstrap.docs.css">
     <link rel="stylesheet" href="./public/css/clipboard.docs.css">
-    <link rel="stylesheet" href="./public/highlight/styles/github.css">
 </head>
+
+<script>
+    var hlstyles = ["agate", "dracula", "rainbow", "atom-one-dark", "solarized-dark", "solarized-light", "github", "railscasts", "monokai-sublime", " zenburn", "androidstudio", "default", "solarized-light", "tomorrow"];
+    var link = document.createElement('link');
+    link.setAttribute("rel", "stylesheet");
+    link.setAttribute("href", "./public/highlight/styles/" + hlstyles[Math.floor(Math.random() * (hlstyles.length - 1))] + ".css");
+    document.getElementsByTagName('head')[0].append(link);
+</script>
 
 <body>
 <div id="main">
@@ -20,6 +27,8 @@
 <script type="text/javascript" src="./public/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="./public/vendor/clipboard/dist/clipboard.min.js"></script>
 <script type="text/javascript" src="./dist/react-components-example.min.js"></script>
-
 <script src="./public/highlight/highlight.pack.js"></script>
+
+</body>
+
 </html>

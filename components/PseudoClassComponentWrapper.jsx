@@ -31,6 +31,10 @@ export default ComposedComponent => {
             }
         };
 
+        componentWillUnmount() {
+            $(ReactDOM.findDOMNode(this).unbind('hover'));
+        }
+
         componentDidMount() {
             let style = this.props.style;
             if (style && style[':hover']) {

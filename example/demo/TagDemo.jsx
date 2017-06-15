@@ -13,6 +13,7 @@ export default class TagDemo extends Component {
                     <Tag name="绿茶" style={{borderRadius: 'inherit'}}/>
                     <Tag name="红茶" />
                     <Tag name="Coco" />
+                    <Tag name="Coco" />
                 </DP>
 
                 <DP title="2. 带onclick标签:">
