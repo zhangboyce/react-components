@@ -24,27 +24,45 @@ export default class CardDemo extends Component {
                         <Card cover="/public/images/card/002.jpg"
                               title="1男人7种行为等同于说“我爱你”！你看懂了吗？"
                               desc="阅读本文前，请您先点击本文上面的蓝色字体“教你学一点说话技巧”再点击“关注”，这样您就可以继续免费收到文章了"
-                              author="教你学一点说话技巧" />
+                              author="教你学一点说话技巧"
+                              readNum="1235"
+                              likeNum="9982"
+                              createdDate="2019-09-98"  />
                         <Card cover="/public/images/card/002.jpg"
                               title="2男人7种行为等同于说“我爱你”！你看懂了吗？"
                               desc="阅读本文前，请您先点击本文上面的蓝色字体“教你学一点说话技巧”再点击“关注”，这样您就可以继续免费收到文章了"
-                              author="教你学一点说话技巧" />
+                              author="教你学一点说话技巧"
+                              readNum="1235"
+                              likeNum="9982"
+                              createdDate="2019-09-98"  />
                         <Card cover="/public/images/card/002.jpg"
                               title="3男人7种行为等同于说“我爱你”！你看懂了吗？"
                               desc="阅读本文前，请您先点击本文上面的蓝色字体“教你学一点说话技巧”再点击“关注”，这样您就可以继续免费收到文章了"
-                              author="教你学一点说话技巧" />
+                              author="教你学一点说话技巧"
+                              readNum="1235"
+                              likeNum="9982"
+                              createdDate="2019-09-98"  />
                         <Card cover="/public/images/card/002.jpg"
                               title="4男人7种行为等同于说“我爱你”！你看懂了吗？"
                               desc="阅读本文前，请您先点击本文上面的蓝色字体“教你学一点说话技巧”再点击“关注”，这样您就可以继续免费收到文章了"
-                              author="教你学一点说话技巧" />
+                              author="教你学一点说话技巧"
+                              readNum="1235"
+                              likeNum="9982"
+                              createdDate="2019-09-98"  />
                         <Card cover="/public/images/card/002.jpg"
                               title="5男人7种行为等同于说“我爱你”！你看懂了吗？"
                               desc="阅读本文前，请您先点击本文上面的蓝色字体“教你学一点说话技巧”再点击“关注”，这样您就可以继续免费收到文章了"
-                              author="教你学一点说话技巧" />
+                              author="教你学一点说话技巧"
+                              readNum="1235"
+                              likeNum="9982"
+                              createdDate="2019-09-98"  />
                         <Card cover="/public/images/card/002.jpg"
                               title="6男人7种行为等同于说“我爱你”！你看懂了吗？"
                               desc="阅读本文前，请您先点击本文上面的蓝色字体“教你学一点说话技巧”再点击“关注”，这样您就可以继续免费收到文章了"
-                              author="教你学一点说话技巧" />
+                              author="教你学一点说话技巧"
+                              readNum="1235"
+                              likeNum="9982"
+                              createdDate="2019-09-98"  />
                     </Cards>
                 </DP>
                 <DP title="3. 简单卡片:">
@@ -108,7 +126,7 @@ export default class CardDemo extends Component {
                                 desc="阅读本文前，请您先点击本文上面的蓝色字体“教你学一点说话技巧”再点击“关注”，这样您就可以继续免费收到文章了"
                                 readNum="1212"
                                 likeNum="98227"
-                                articleNum="56篇"
+                                articleNum="2134"
                                 onClick={ () => { console.log('be clicked.'); } } />
                 </DP>
             </Layout>
