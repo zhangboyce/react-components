@@ -12,6 +12,7 @@ import SimpleCard from './card/SimpleCard.jsx';
 import SubscribeCard from './card/SubscribeCard.jsx';
 import Slider from './slider/Slider.jsx';
 import Sliders from './slider/Sliders.jsx';
+import Icon from './icon/Icon.jsx';
 
 module.exports = {
     ProgressBar,
@@ -25,5 +26,6 @@ module.exports = {
     SimpleCard,
     SubscribeCard,
     Slider,
-    Sliders
+    Sliders,
+    Icon
 };

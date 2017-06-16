@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import  { Slider, Sliders }  from 'react-components';
-import Layout from './Layout.jsx';
+import Layout from './../Layout.jsx';
 import DP from './DP.jsx';
 
 export default class SliderBannerDemo extends Component {

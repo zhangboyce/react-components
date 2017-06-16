@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 
 import  { Tag, Tags }  from 'react-components';
-import Layout from './Layout.jsx';
+import Layout from './../Layout.jsx';
 import DP from './DP.jsx';
 
 export default class TagDemo extends Component {

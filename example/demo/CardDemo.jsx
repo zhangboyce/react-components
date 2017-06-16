@@ -1,8 +1,7 @@
 
 import React,{ Component } from 'react';
-import Layout from './Layout.jsx';
+import Layout from './../Layout.jsx';
 import DP from './DP.jsx';
-
 
 import { Card, Cards, SimpleCard, SubscribeCard } from 'react-components';
 

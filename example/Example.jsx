@@ -10,6 +10,7 @@ import TagDemo from './demo/TagDemo.jsx';
 import SearchInputDemo from './demo/SearchInputDemo.jsx';
 import CardDemo from './demo/CardDemo.jsx';
 import SliderDemo from './demo/SliderDemo.jsx';
+import IconDemo from './demo/IconDemo.jsx';
 
 ReactDOM.render(
     <Router history={ browserHistory }>
@@ -21,5 +22,6 @@ ReactDOM.render(
         <Route path="searchinput" component={ SearchInputDemo } />
         <Route path="card" component={ CardDemo } />
         <Route path="slider" component={ SliderDemo } />
+        <Route path="icon" component={ IconDemo } />
 
     </Router>, document.getElementById('main'));

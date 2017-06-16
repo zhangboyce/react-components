@@ -6,7 +6,7 @@
 ```
 git clone git@github.com:zhangboyce/react-components.git
 npm install
-npm run bower
+bower install
 npm run build
 
 ```
@@ -15,9 +15,10 @@ npm run build
 
 ```
 cd example
-npm install
-npm run bower
-npm run server
+bower install
+cd ..
+npm run build-example
+npm run example
 
 http://localhost:8008
 
