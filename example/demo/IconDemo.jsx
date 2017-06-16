@@ -13,6 +13,7 @@ export default class IconDemo extends Component {
                     <Icon className=""/>
                     <Icon className=""/>
                     <Icon className=""/>
+                    <Icon className=""/>
                 </DP>
 
             </Layout>
