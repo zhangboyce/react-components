@@ -6,6 +6,8 @@ import PseudoClassComponentWrapper from '../PseudoClassComponentWrapper.jsx';
 
 class Card extends Component {
 
+    handleFilter = num => num >= 1000 ? (num / 1000).toFixed(1) + 'k+' : num;
+
     render() {
         let { style, cover, title, author, desc, readNum, likeNum, createdDate  } = this.props;
         return (
@@ -20,8 +22,8 @@ class Card extends Component {
                   </div>
                   <p>{ desc }</p>
                   <div className="tips">
-                      <i className="fa fa-eye">&nbsp;{ readNum || '-' }</i>
-                      <i className="fa fa-heart">&nbsp;{ likeNum || '-' }</i>
+                      <i className="fa fa-eye">&nbsp;{ this.handleFilter(readNum) || '-' }</i>
+                      <i className="fa fa-heart">&nbsp;{ this.handleFilter(likeNum) || '-' }</i>
                       <i className="fa fa-calendar-plus-o">&nbsp;{ createdDate || '-' }</i>
                   </div>
               </div>
