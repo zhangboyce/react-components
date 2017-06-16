@@ -31,8 +31,8 @@ export default class SubscribeCard extends Component {
                 </section>
 
                 <div>
-                    <h4>{ author || '' }</h4>
-                    <p>{ desc }</p>
+                    <h4 title={ author }>{ author || '' }</h4>
+                    <p title={ desc }>{ desc }</p>
                     <div>
                         <span className="fa fa-eye">&nbsp;<i>{ this.handleFilter(readNum) || '-' }</i></span>
                         <span className="fa fa-heart">&nbsp;<i>{ this.handleFilter(likeNum) || '-' }</i></span>

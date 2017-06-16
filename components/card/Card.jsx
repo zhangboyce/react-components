@@ -14,13 +14,13 @@ class Card extends Component {
           <div style={ style } className="react-component-card">
               <img src={ cover } />
               <div>
-                  <h4>
+                  <h4 title={ title }>
                       { title }
                   </h4>
                   <div className="author">
-                      <span>{ author || '' }</span>
+                      <span title={ author }>{ author || '' }</span>
                   </div>
-                  <p>{ desc }</p>
+                  <p title={ desc }>{ desc }</p>
                   <div className="tips">
                       <i className="fa fa-eye">&nbsp;{ this.handleFilter(readNum) || '-' }</i>
                       <i className="fa fa-heart">&nbsp;{ this.handleFilter(likeNum) || '-' }</i>
