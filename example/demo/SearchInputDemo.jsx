@@ -8,7 +8,7 @@ export default class SearchInputDemo extends Component {
 
     render() {
         return (
-            <Layout title="搜索框">
+            <Layout title="SearchInputDemo">
                 <DP title="1. 普通搜索框:">
                     <SearchInput onSearch={ keyword => { alert(keyword) } } />
                 </DP>

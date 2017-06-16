@@ -8,7 +8,7 @@ export default class TagDemo extends Component {
 
     render() {
         return (
-            <Layout title="标签">
+            <Layout title="TagDemo">
                 <DP title="1. 普通标签:">
                     <Tag name="绿茶" style={{borderRadius: 'inherit'}}/>
                     <Tag name="红茶" />

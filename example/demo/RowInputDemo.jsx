@@ -7,7 +7,7 @@ import DP from './DP.jsx';
 export default class RowInputDemo extends Component {
     render() {
         return (
-            <Layout title="输入框">
+            <Layout title="RowInputDemo">
                 <DP title="1. 默认输入框:">
                     <RowInput name="n1" />
                 </DP>

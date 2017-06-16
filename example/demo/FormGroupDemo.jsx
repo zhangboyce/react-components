@@ -7,7 +7,7 @@ import DP from './DP.jsx';
 export default class FormGroupDemo extends Component {
     render() {
         return (
-            <Layout title="表单组">
+            <Layout title="FormGroupDemo">
                 <DP title="1. 表单组:">
                     <FormGroup>
                         <RowInput ref="name" name="name" isRequired label="姓名" />

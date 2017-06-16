@@ -2,26 +2,20 @@ import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './public/css/main.less';
+import * as demos from './demo';
 
-import ProgressBarDemo from './demo/ProgressBarDemo.jsx';
-import RowInputDemo from './demo/RowInputDemo.jsx';
-import FormGroupDemo from './demo/FormGroupDemo.jsx';
-import TagDemo from './demo/TagDemo.jsx';
-import SearchInputDemo from './demo/SearchInputDemo.jsx';
-import CardDemo from './demo/CardDemo.jsx';
-import SliderDemo from './demo/SliderDemo.jsx';
-import IconDemo from './demo/IconDemo.jsx';
+let routers = [];
+let i = 0;
+for (let k in demos) {
+        if (Object.prototype.hasOwnProperty.call(demos, k)) {
+                let comp = demos[k];
+                if (i == 0) routers.push(<Route path="/" component={ comp } />);
+                routers.push(<Route path={ k.replace('Demo', '').toLowerCase() } component={ comp }/>);
+        }
+        i ++;
+}
 
 ReactDOM.render(
     <Router history={ browserHistory }>
-        <Route path="/" component={ ProgressBarDemo }/>
-        <Route path="progressbar" component={ ProgressBarDemo } />
-        <Route path="rowinput" component={ RowInputDemo } />
-        <Route path="formgroup" component={ FormGroupDemo } />
-        <Route path="tag" component={ TagDemo } />
-        <Route path="searchinput" component={ SearchInputDemo } />
-        <Route path="card" component={ CardDemo } />
-        <Route path="slider" component={ SliderDemo } />
-        <Route path="icon" component={ IconDemo } />
-
+            { routers }
     </Router>, document.getElementById('main'));

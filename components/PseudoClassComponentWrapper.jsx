@@ -32,7 +32,7 @@ export default ComposedComponent => {
         };
 
         componentWillUnmount() {
-            $(ReactDOM.findDOMNode(this).unbind('hover'));
+            $(ReactDOM.findDOMNode(this)).unbind('hover');
         }
 
         componentDidMount() {

@@ -3,7 +3,7 @@ import  { Slider, Sliders }  from 'react-components';
 import Layout from './../Layout.jsx';
 import DP from './DP.jsx';
 
-export default class SliderBannerDemo extends Component {
+export default class SliderDemo extends Component {
 
     render() {
         let images = [
@@ -13,7 +13,7 @@ export default class SliderBannerDemo extends Component {
             '../public/images/banners/版权购买.png'
         ];
         return (
-            <Layout title="轮播Slider">
+            <Layout title="SliderDemo">
                 <DP title="1. 默认轮播Slider:">
                     <Sliders id="slider_1">
                         <Slider image={ images[2] } >

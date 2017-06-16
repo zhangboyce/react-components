@@ -8,7 +8,7 @@ export default class IconDemo extends Component {
 
     render() {
         return (
-            <Layout title="Icon">
+            <Layout title="IconDemo">
                 <DP title="1. 普通Icon:">
                     <Icon className=""/>
                     <Icon className=""/>
