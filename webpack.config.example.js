@@ -5,10 +5,10 @@ var node_modules = path.resolve(__dirname, './node_modules');
 var development = process.env.NODE_ENV == 'development';
 
 module.exports = {
-    entry: path.resolve(__dirname, './Example.jsx'),
+    entry: path.resolve(__dirname, './example/Example.jsx'),
     output: {
-        publicPath: development ? "http://localhost:8008/dist/" : "./dist/",
-        path: path.resolve(__dirname, './dist'),
+        publicPath: development ? "http://localhost:8008/example/dist" : ".example/dist/",
+        path: path.resolve(__dirname, './example/dist'),
         filename: 'react-components-example.min.js'
     },
     module: {
@@ -47,7 +47,7 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx'],
         alias:{
-            "react-components":development ? path.resolve(__dirname, '../components/index.js') : path.resolve(__dirname, '../index.js')
+            "react-components":development ? path.resolve(__dirname, './components/index.js') : path.resolve(__dirname, './index.js')
         }
     },
     plugins: [

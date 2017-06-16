@@ -1,14 +1,14 @@
 import React, { PropTypes, Component } from 'react';
 
 import  { Tag, Tags }  from 'react-components';
-import Layout from './Layout.jsx';
+import Layout from './../Layout.jsx';
 import DP from './DP.jsx';
 
 export default class TagDemo extends Component {
 
     render() {
         return (
-            <Layout title="标签">
+            <Layout title="TagDemo">
                 <DP title="1. 普通标签:">
                     <Tag name="绿茶" style={{borderRadius: 'inherit'}}/>
                     <Tag name="红茶" />

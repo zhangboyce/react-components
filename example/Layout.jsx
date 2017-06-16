@@ -1,15 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-
-const links = {
-    "progressbar": "流程进度条",
-    "rowinput": "输入框",
-    "formgroup": "表单组",
-    "tag": "标签",
-    "searchinput": "搜索框",
-    "card":"卡片",
-    "slider": "轮播Slider"
-};
+import * as demos from './demo';
 
 export default class Layout extends Component {
 
@@ -28,16 +19,13 @@ export default class Layout extends Component {
     render () {
         this.__highlight_code__();
 
-        let linkComps = [];
-        for (let prop in links) {
-            if (links.hasOwnProperty(prop)) {
-                linkComps.push(
-                    <li className={ this.__classnames__(links[prop]) } key={ prop }>
-                        <Link to={ prop }>{ links[prop] }</Link>
-                    </li>
-                );
-            }
-        }
+        let linkComps = Object.keys(demos).map(k => {
+            return (
+                <li className={ this.__classnames__(k) } key={ k }>
+                    <Link to={ k.replace('Demo', '').toLowerCase() }>{ k.replace('Demo', '') }</Link>
+                </li>
+            );
+        });
 
         return (
             <div className="container-fluid main">

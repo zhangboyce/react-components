@@ -1,29 +1,15 @@
 'use strict';
 
-import ProgressBar from './progress_bar/ProgressBar.jsx';
-import RowInput from './form/RowInput.jsx';
-import FormGroup from './form/FormGroup.jsx';
-import Tag from './tag/Tag.jsx';
-import Tags from './tag/Tags.jsx';
-import SearchInput from './search/SearchInput.jsx';
-import Card from './card/Card.jsx';
-import Cards from './card/Cards.jsx';
-import SimpleCard from './card/SimpleCard.jsx';
-import SubscribeCard from './card/SubscribeCard.jsx';
-import Slider from './slider/Slider.jsx';
-import Sliders from './slider/Sliders.jsx';
-
-module.exports = {
-    ProgressBar,
-    RowInput,
-    FormGroup,
-    Tag,
-    Tags,
-    SearchInput,
-    Card,
-    Cards,
-    SimpleCard,
-    SubscribeCard,
-    Slider,
-    Sliders
-};
+export { default as ProgressBar } from './progress_bar/ProgressBar.jsx';
+export { default as RowInput } from './form/RowInput.jsx';
+export { default as FormGroup } from './form/FormGroup.jsx';
+export { default as Tag } from './tag/Tag.jsx';
+export { default as Tags } from './tag/Tags.jsx';
+export { default as SearchInput } from './search/SearchInput.jsx';
+export { default as Card } from './card/Card.jsx';
+export { default as Cards } from './card/Cards.jsx';
+export { default as SimpleCard } from './card/SimpleCard.jsx';
+export { default as SubscribeCard } from './card/SubscribeCard.jsx';
+export { default as Slider } from './slider/Slider.jsx';
+export { default as Sliders } from './slider/Sliders.jsx';
+export { default as Icon } from './icon/Icon.jsx';
