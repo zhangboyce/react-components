@@ -1,14 +1,17 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
+import PseudoClassComponentWrapper from '../PseudoClassComponentWrapper.jsx';
 import './card.less';
+import Tips from '../tip/Tips.jsx';
+import Tip from '../tip/Tip.jsx';
 
-export default class SimpleCard extends Component {
+class SimpleCard extends Component {
 
     render() {
-        let { style, cover, author, desc, readNum, likeNum, articleNum, btnName  } = this.props;
+        let { cover, author, desc, readNum, likeNum, articleNum, btnName  } = this.props;
         return (
-            <div style={ style } className="react-component-card simple">
+            <div className="react-component-card simple">
                 <div>
                     <img src={ cover } />
                     <a href="javascript:;" onClick={ this.props.onClick }>
@@ -18,11 +21,11 @@ export default class SimpleCard extends Component {
                 <div>
                     <h4>{ author || '' }</h4>
                     <p>{ desc }</p>
-                    <div>
-                        <span className="fa fa-eye">&nbsp;<i>{ readNum || '-' }</i></span>
-                        <span className="fa fa-heart">&nbsp;<i>{ likeNum || '-' }</i></span>
-                        <span className="fa fa-file-text-o">&nbsp;<i>{ articleNum || '-' }</i></span>
-                    </div>
+                    <Tips gap="4px">
+                        <Tip className="fa fa-eye" tip={ readNum } style={{ fontSize: "12px" }} />
+                        <Tip className="fa fa-heart" tip={ likeNum } style={{ fontSize: "12px" }}/>
+                        <Tip className="fa fa-file-text-o" tip={ articleNum } style={{ fontSize: "12px" }} />
+                    </Tips>
                 </div>
             </div>
         );
@@ -32,7 +35,6 @@ export default class SimpleCard extends Component {
 SimpleCard.propTypes = {
     cover:PropTypes.string.isRequired,
     onClick:PropTypes.func.isRequired,
-    style:PropTypes.object,
     author:PropTypes.string,
     desc:PropTypes.string,
     readNum:PropTypes.string,
@@ -40,3 +42,5 @@ SimpleCard.propTypes = {
     articleNum:PropTypes.string,
     btnName:PropTypes.string
 };
+
+export default PseudoClassComponentWrapper(SimpleCard);

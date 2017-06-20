@@ -1,9 +1,12 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
+import PseudoClassComponentWrapper from '../PseudoClassComponentWrapper.jsx';
 import './card.less';
+import Tips from '../tip/Tips.jsx';
+import Tip from '../tip/Tip.jsx';
 
-export default class SubscribeCard extends Component {
+class SubscribeCard extends Component {
     constructor(props) {
         super(props);
         this.state = { isClick: false }
@@ -14,12 +17,10 @@ export default class SubscribeCard extends Component {
         return this.props.onClick();
     };
 
-    handleFilter = num => num >= 1000 ? (num / 1000).toFixed(1) + 'k+' : num;
-
     render() {
-        let { style, cover, author, desc, readNum, likeNum, articleNum  } = this.props;
+        let { cover, author, desc, readNum, likeNum, articleNum  } = this.props;
         return (
-            <div style={ style } className="react-component-card subscribe">
+            <div className="react-component-card subscribe">
                 {
                     !this.state.isClick && <a href="javascript:;" onClick={ this.handleOnClick }><span>订阅</span></a>
                 }
@@ -33,11 +34,11 @@ export default class SubscribeCard extends Component {
                 <div>
                     <h4>{ author || '' }</h4>
                     <p>{ desc }</p>
-                    <div>
-                        <span className="fa fa-eye">&nbsp;<i>{ this.handleFilter(readNum) || '-' }</i></span>
-                        <span className="fa fa-heart">&nbsp;<i>{ this.handleFilter(likeNum) || '-' }</i></span>
-                        <span className="fa fa-file-text-o">&nbsp;<i>{ this.handleFilter(articleNum)+'篇' || '-' }</i></span>
-                    </div>
+                    <Tips gap="4px">
+                        <Tip className="fa fa-eye" tip={ readNum } style={{ fontSize: "12px" }} />
+                        <Tip className="fa fa-heart" tip={ likeNum } style={{ fontSize: "12px" }}/>
+                        <Tip className="fa fa-file-text-o" tip={ articleNum } style={{ fontSize: "12px" }} />
+                    </Tips>
                 </div>
             </div>
         );
@@ -47,10 +48,11 @@ export default class SubscribeCard extends Component {
 SubscribeCard.propTypes = {
     cover:PropTypes.string.isRequired,
     onClick:PropTypes.func.isRequired,
-    style:PropTypes.object,
     author:PropTypes.string,
     desc:PropTypes.string,
     readNum:PropTypes.string,
     likeNum:PropTypes.string,
     articleNum:PropTypes.string
 };
+
+export default PseudoClassComponentWrapper(SubscribeCard);

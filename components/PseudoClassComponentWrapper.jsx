@@ -1,15 +1,15 @@
 'use strict';
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
+import { isObject } from '../common/Utils';
 
 const toString = Object.prototype.toString;
 const hasOwnProperty = Object.prototype.hasOwnProperty;
 
 export default ComposedComponent => {
-
     let Wrapped = class extends Component {
-        __handleHover__ = css => {
-            let $this = $(ReactDOM.findDOMNode(this));
+
+        __handleHover__ = ($this, css) => {
             if (toString.call(css) == '[object Object]') {
                 let old = {};
                 for (let k in css) {
@@ -32,20 +32,29 @@ export default ComposedComponent => {
         };
 
         componentWillUnmount() {
-            $(ReactDOM.findDOMNode(this)).unbind('hover');
+            let $this = $(ReactDOM.findDOMNode(this));
+            $this.unbind('hover');
         }
 
         componentDidMount() {
+            let $this = $(ReactDOM.findDOMNode(this));
             let style = this.props.style;
-            if (style && style[':hover']) {
-                let css = style[':hover'];
-                this.__handleHover__(css);
+            if (style) {
+                for (let k in style) {
+                    if (Object.prototype.hasOwnProperty.call(style, k)) {
+                        if (k === ':hover') {
+                            this.__handleHover__($this, style[k]);
+                        } else {
+                            $this.css(k, style[k]);
+                        }
+                    }
+                }
             }
         }
 
         render() {
             return (
-                <ComposedComponent {...this.props} />
+                <ComposedComponent { ...this.props } />
             );
         }
     };
@@ -54,6 +63,10 @@ export default ComposedComponent => {
         value: ComposedComponent.name,
         writable: false
     });
+
+    Wrapped.propTypes = {
+        style: PropTypes.object
+    };
 
     return Wrapped;
 };

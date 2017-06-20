@@ -12,4 +12,5 @@ export { default as SimpleCard } from './card/SimpleCard.jsx';
 export { default as SubscribeCard } from './card/SubscribeCard.jsx';
 export { default as Slider } from './slider/Slider.jsx';
 export { default as Sliders } from './slider/Sliders.jsx';
-export { default as Icon } from './icon/Icon.jsx';
+export { default as Tip } from './tip/Tip.jsx';
+export { default as Tips } from './tip/Tips.jsx';

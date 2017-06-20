@@ -3,13 +3,15 @@
 import React, { Component, PropTypes } from 'react';
 import './card.less';
 import PseudoClassComponentWrapper from '../PseudoClassComponentWrapper.jsx';
+import Tips from '../tip/Tips.jsx';
+import Tip from '../tip/Tip.jsx';
 
 class Card extends Component {
 
     render() {
-        let { style, cover, title, author, desc, readNum, likeNum, createdDate  } = this.props;
+        let { cover, title, author, desc, readNum, likeNum, createdDate  } = this.props;
         return (
-          <div style={ style } className="react-component-card">
+          <div className="react-component-card">
               <img src={ cover } />
               <div>
                   <h4>
@@ -19,11 +21,11 @@ class Card extends Component {
                       <span>{ author || '' }</span>
                   </div>
                   <p>{ desc }</p>
-                  <div className="tips">
-                      <i className="fa fa-eye">&nbsp;{ readNum || '-' }</i>
-                      <i className="fa fa-heart">&nbsp;{ likeNum || '-' }</i>
-                      <i className="fa fa-calendar-plus-o">&nbsp;{ createdDate || '-' }</i>
-                  </div>
+                  <Tips gap="4px">
+                      <Tip className="fa fa-eye" tip={ readNum } style={{ fontSize: "12px" }} />
+                      <Tip className="fa fa-heart" tip={ likeNum } style={{ fontSize: "12px" }}/>
+                      <Tip className="fa fa-calendar-plus-o" tip={ createdDate } style={{ fontSize: "12px" }} />
+                  </Tips>
               </div>
           </div>
         );
@@ -34,7 +36,6 @@ Card.propTypes = {
     cover:PropTypes.string.isRequired,
     title:PropTypes.string.isRequired,
     author:PropTypes.string,
-    style:PropTypes.object,
     desc:PropTypes.string,
     readNum:PropTypes.string,
     likeNum:PropTypes.string,

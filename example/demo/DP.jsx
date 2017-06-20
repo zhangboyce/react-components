@@ -1,32 +1,26 @@
 import React, { Component } from 'react';
 
-const toString = Object.prototype.toString;
 const blank = "  ";
 const new_line = "\r\n";
 let clipboard;
 
+import { isString, isNumber, isBoolean, isObject, isArray, isFunction  } from '../../common/Utils';
+
 export default class DP extends Component {
 
-    __isString__ = v => toString.call(v) === '[object String]';
-    __isNumber__ = v => toString.call(v) === '[object Number]';
-    __isBoolean__ = v => toString.call(v) === '[object Boolean]';
-    __isObject__ = v => toString.call(v) === '[object Object]';
-    __isArray__ = v => toString.call(v) === '[object Array]';
-    __isFunction__ = v => toString.call(v) === '[object Function]';
-
     __toString__ = v => {
-        if (this.__isString__(v)) return `"${v}"`;
-        if (this.__isNumber__(v)) return `{ ${v} }`;
-        if (this.__isBoolean__(v)) return "";
-        if (this.__isObject__(v)) {
+        if (isString(v)) return `"${v}"`;
+        if (isNumber(v)) return `{ ${v} }`;
+        if (isBoolean(v)) return "";
+        if (isObject(v)) {
             let result = '{ ';
             for (let k in v) {
                 result += `${k}: ${ this.__toString__(v[k]) }, `;
             }
             return  '{' +  result.substring(0, result.length -2) + ' }}';
         }
-        if (this.__isArray__(v)) return '[' + v.map(it => this.__toString__(it)).toString() + ']';
-        if (this.__isFunction__(v)) {
+        if (isArray(v)) return '[' + v.map(it => this.__toString__(it)).toString() + ']';
+        if (isFunction(v)) {
             let func = v.toString();
             let body = func.substring(func.indexOf("{") + 1, func.lastIndexOf("}")).replace(/\n/g, '').replace(/\r\n/g, '').trim();
             return `{ () => { ${ body } } }`;
@@ -34,7 +28,7 @@ export default class DP extends Component {
     };
 
     jsxToString = (children, level = 0) => {
-        if (this.__isArray__(children)) {
+        if (isArray(children)) {
             let result = '';
             children.forEach((child, i) => {
                 if (i !=0) result += new_line;
@@ -42,9 +36,9 @@ export default class DP extends Component {
             });
             return result;
 
-        } else if(this.__isObject__(children)) {
+        } else if(isObject(children)) {
             let child = children;
-            let name =  this.__isString__(child.type) ? child.type : child.type.name;
+            let name =  isString(child.type) ? child.type : child.type.name;
             let ref = child.ref;
             let props = Object.assign({}, child.props);
             props.ref = ref;
@@ -73,7 +67,7 @@ export default class DP extends Component {
                 let content = this.jsxToString(p_children, level + 1);
                 return `${ component }>${new_line}${ content }${new_line}${t1}</${name}>`;
             }
-        } else if (this.__isString__(children)){
+        } else if (isString(children)){
             return blank.repeat(level) + children;
         }
     };
