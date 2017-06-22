@@ -8,7 +8,6 @@ export { default as Tags } from './tag/Tags.jsx';
 export { default as SearchInput } from './search/SearchInput.jsx';
 export { default as Card } from './card/Card.jsx';
 export { default as Cards } from './card/Cards.jsx';
-export { default as SimpleCard } from './card/SimpleCard.jsx';
 export { default as SubscribeCard } from './card/SubscribeCard.jsx';
 export { default as Slider } from './slider/Slider.jsx';
 export { default as Sliders } from './slider/Sliders.jsx';

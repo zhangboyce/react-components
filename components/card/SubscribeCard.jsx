@@ -7,32 +7,25 @@ import Tips from '../tip/Tips.jsx';
 import Tip from '../tip/Tip.jsx';
 
 class SubscribeCard extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { isClick: false }
-    }
-
-    handleOnClick = () => {
-        this.setState({ isClick:!this.state.isClick });
-        return this.props.onClick();
-    };
 
     render() {
-        let { cover, author, desc, readNum, likeNum, articleNum  } = this.props;
+        let { onClick, cover, author, desc, readNum, likeNum, articleNum  } = this.props;
         return (
             <div className="react-component-card subscribe">
                 {
-                    !this.state.isClick && <a href="javascript:;" onClick={ this.handleOnClick }><span>订阅</span></a>
+                    this.props.children
                 }
-                {
-                    this.state.isClick && <a href="javascript:;" onClick={ this.handleOnClick } style={{ color:'#808080',border:'1px solid #808080' }}><span>取消订阅</span></a>
-                }
-                <section>
+                <section onClick={ () => { onClick && onClick() } }
+                         style={{ cursor: (onClick ? 'pointer' : 'inherit') }}>
                     <img src={ cover } />
                 </section>
 
                 <div>
-                    <h4>{ author || '' }</h4>
+                    <h4 onClick={ () => { onClick && onClick() } }
+                        style={{ cursor: (onClick ? 'pointer' : 'inherit') }}>
+                        { author || '' }
+                    </h4>
+
                     <p>{ desc }</p>
                     <Tips gap="4px">
                         <Tip className="fa fa-eye" tip={ readNum } style={{ fontSize: "12px" }} />
@@ -46,13 +39,13 @@ class SubscribeCard extends Component {
 }
 
 SubscribeCard.propTypes = {
-    cover:PropTypes.string.isRequired,
-    onClick:PropTypes.func.isRequired,
-    author:PropTypes.string,
-    desc:PropTypes.string,
-    readNum:PropTypes.string,
-    likeNum:PropTypes.string,
-    articleNum:PropTypes.string
+    cover: PropTypes.string.isRequired,
+    onClick: PropTypes.func,
+    author: PropTypes.string,
+    desc: PropTypes.string,
+    readNum: PropTypes.number,
+    likeNum: PropTypes.number,
+    articleNum: PropTypes.number
 };
 
 export default PseudoClassComponentWrapper(SubscribeCard);

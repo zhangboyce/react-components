@@ -9,9 +9,11 @@ import Tip from '../tip/Tip.jsx';
 class Card extends Component {
 
     render() {
-        let { cover, title, author, desc, readNum, likeNum, createdDate  } = this.props;
+        let { onClick, cover, title, author, desc, readNum, likeNum, createdDate  } = this.props;
         return (
-          <div className="react-component-card">
+          <div className="react-component-card" onClick={ () => { onClick && onClick() } }
+               style={{ cursor: (onClick ? 'pointer' : 'inherit') }}>
+
               <img src={ cover } />
               <div>
                   <h4>
@@ -35,12 +37,12 @@ class Card extends Component {
 Card.propTypes = {
     cover:PropTypes.string.isRequired,
     title:PropTypes.string.isRequired,
+    onClick:PropTypes.func,
     author:PropTypes.string,
     desc:PropTypes.string,
-    readNum:PropTypes.string,
-    likeNum:PropTypes.string,
-    createdDate:PropTypes.string,
-    onClick:PropTypes.func
+    readNum:PropTypes.number,
+    likeNum:PropTypes.number,
+    createdDate:PropTypes.string
 };
 
 export default PseudoClassComponentWrapper(Card);
