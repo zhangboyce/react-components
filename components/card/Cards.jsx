@@ -18,7 +18,7 @@ export default class Cards extends Component {
         children = isArray(children) ? children : [ children ];
         children = children.map((child, index) => React.cloneElement(child, {
             key: index,
-            style: { width: width, margin: margin }
+            style: Object.assign({}, child.props.style || {},  { width: width, margin: margin })
         }));
 
         return (

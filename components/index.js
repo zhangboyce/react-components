@@ -13,3 +13,8 @@ export { default as Slider } from './slider/Slider.jsx';
 export { default as Sliders } from './slider/Sliders.jsx';
 export { default as Tip } from './tip/Tip.jsx';
 export { default as Tips } from './tip/Tips.jsx';
+
+
+export { default as ClickComponentWrapper } from './hoc/ClickComponentWrapper.jsx';
+export { default as HoverComponentWrapper } from './hoc/HoverComponentWrapper.jsx';
+export { default as StyleComponentWrapper } from './hoc/StyleComponentWrapper.jsx';

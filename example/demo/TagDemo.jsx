@@ -11,7 +11,7 @@ export default class TagDemo extends Component {
             <Layout title="TagDemo">
                 <DP title="1. 普通标签:">
                     <Tag name="绿茶" style={{borderRadius: 'inherit'}}/>
-                    <Tag name="红茶" />
+                    <Tag name="红茶" onHover={() => { console.log('我是红茶') }}/>
                     <Tag name="Coco" />
                     <Tag name="Coco" />
                 </DP>
@@ -60,7 +60,10 @@ export default class TagDemo extends Component {
                 </DP>
                 <DP title="9. 自定义标签style:">
                     <Tags>
-                        <Tag type="common" name="绿茶" style={{ width: '200px', 'background-color': 'blue', ':hover': { width: '1000px', 'background-color': 'red' } }}/>
+                        <Tag type="common"
+                             name="绿茶"
+                             onHover={{ width: '1000px', 'background-color': 'red' }}
+                             style={{ width: '200px', 'backgroundColor': 'blue' }}/>
                     </Tags>
                 </DP>
             </Layout>

@@ -1,7 +1,11 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
-import PseudoClassComponentWrapper from '../PseudoClassComponentWrapper.jsx';
+import StyleComponentWrapper from '../hoc/StyleComponentWrapper.jsx';
+import ClickComponentWrapper from '../hoc/ClickComponentWrapper.jsx';
+import HoverComponentWrapper from '../hoc/HoverComponentWrapper.jsx';
+import { withWrapper } from '../hoc/wrapper.js';
+
 import { isString, isNumber, isBoolean, isObject, isArray, isFunction  } from '../../common/Utils';
 import './tip.less';
 
@@ -53,4 +57,4 @@ Tip.defaultProps = {
     defaultTip: '-'
 };
 
-export default PseudoClassComponentWrapper(Tip);
+export default withWrapper(StyleComponentWrapper, ClickComponentWrapper, HoverComponentWrapper)(Tip);

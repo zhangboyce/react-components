@@ -13,7 +13,7 @@ export default class Tips extends Component {
         children.forEach((child, index) => {
             newChildren.push(React.cloneElement(child, {
                 key: index,
-                style: Object.assign({}, child.props.style, { marginLeft: gap, marginRight: gap })
+                style: Object.assign({}, child.props.style || {}, { marginLeft: gap, marginRight: gap })
             }));
             if (separated && index != children.length - 1) {
 

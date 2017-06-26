@@ -1,15 +1,17 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
-import PseudoClassComponentWrapper from '../PseudoClassComponentWrapper.jsx';
+import StyleComponentWrapper from '../hoc/StyleComponentWrapper.jsx';
+import ClickComponentWrapper from '../hoc/ClickComponentWrapper.jsx';
+import HoverComponentWrapper from '../hoc/HoverComponentWrapper.jsx';
+import { withWrapper } from '../hoc/wrapper.js';
+
 import './card.less';
-import Tips from '../tip/Tips.jsx';
-import Tip from '../tip/Tip.jsx';
 
 class SubscribeCard extends Component {
 
     render() {
-        let { onClick, cover, author, desc, readNum, likeNum, articleNum  } = this.props;
+        let { TipsComponent, onClick, cover, author, desc } = this.props;
         return (
             <div className="react-component-card subscribe">
                 {
@@ -27,11 +29,7 @@ class SubscribeCard extends Component {
                     </h4>
 
                     <p>{ desc }</p>
-                    <Tips gap="4px">
-                        <Tip className="fa fa-eye" tip={ readNum } style={{ fontSize: "12px" }} />
-                        <Tip className="fa fa-heart" tip={ likeNum } style={{ fontSize: "12px" }}/>
-                        <Tip className="fa fa-file-text-o" tip={ articleNum } style={{ fontSize: "12px" }} />
-                    </Tips>
+                    { TipsComponent }
                 </div>
             </div>
         );
@@ -40,12 +38,10 @@ class SubscribeCard extends Component {
 
 SubscribeCard.propTypes = {
     cover: PropTypes.string.isRequired,
+    TipsComponent: PropTypes.element,
     onClick: PropTypes.func,
     author: PropTypes.string,
-    desc: PropTypes.string,
-    readNum: PropTypes.number,
-    likeNum: PropTypes.number,
-    articleNum: PropTypes.number
+    desc: PropTypes.string
 };
 
-export default PseudoClassComponentWrapper(SubscribeCard);
+export default withWrapper(StyleComponentWrapper, ClickComponentWrapper, HoverComponentWrapper)(SubscribeCard);
