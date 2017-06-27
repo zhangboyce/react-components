@@ -8,10 +8,14 @@ class Card extends Component {
 
     handleFilter = num => num >= 1000 ? (num / 1000).toFixed(1) + 'k+' : num;
 
+    handleOnClick = () => {
+        this.props.onClick && this.props.onClick()
+    };
+
     render() {
         let { style, cover, title, author, desc, readNum, likeNum, createdDate  } = this.props;
         return (
-          <div style={ style } className="react-component-card">
+          <div style={ style } className="react-component-card" onClick={ this.handleOnClick }>
               <img src={ cover } />
               <div>
                   <h4 title={ title }>
