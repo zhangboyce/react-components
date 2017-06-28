@@ -2,6 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import { isArray } from '../../common/Utils';
+import './card.less';
 
 export default class Cards extends Component {
 
@@ -14,7 +15,7 @@ export default class Cards extends Component {
         let width = ((100-sum_margin) / rowCols) + '%';
         let margin = `${marginTopBottom} ${ marginLeftRight }%`;
 
-        let children = this.props.children;
+        let children = this.props && this.props.children || [];
         children = isArray(children) ? children : [ children ];
         children = children.map((child, index) => React.cloneElement(child, {
             key: index,

@@ -25,6 +25,20 @@ export default ComposedComponent => {
             }
         }
 
+        componentWillReceiveProps(nextProps) {
+            let $this = $(ReactDOM.findDOMNode(this));
+            let style = nextProps.style;
+            if (isString(style)) {
+                $this.addClass(style.replace('\.', ''));
+            } else if (isObject(style)) {
+                for (let k in style) {
+                    if (Object.prototype.hasOwnProperty.call(style, k)) {
+                        $this.css(k, style[k]);
+                    }
+                }
+            }
+        }
+
         render() {
             return (
                 <ComposedComponent { ...this.props } />
