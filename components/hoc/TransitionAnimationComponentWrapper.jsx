@@ -49,12 +49,18 @@ export default ComposedComponent => {
                 state[transitions[i].property] = transitions[i].start;
             }
             state['transitions'] = transitions;
+            state['toStart'] = false;
 
             this.state = state;
         }
 
-        componentWillUpdate () {
+        componentWillReceiveProps () {
             if (!this.props.animated) return;
+
+            // to start without animation
+            this.resolveAnimationFrame();
+
+            // to end with animation
             request = __requestAnimationFrame__(this.resolveAnimationFrame);
         }
 
@@ -64,7 +70,6 @@ export default ComposedComponent => {
         }
 
         componentWillUnmount() {
-            if (!this.props.animated) return;
             __cancelAnimationFrame__(request);
         }
 
@@ -73,11 +78,15 @@ export default ComposedComponent => {
 
             let transitions = this.state.transitions;
             for (let i=0; i<transitions.length; i++) {
+                let state = {  };
                 if(this.state[transitions[i].property] != transitions[i].end) {
-                    let state = {  };
                     state[transitions[i].property] = transitions[i].end;
-                    this.setState(Object.assign({}, this.state, state));
+                    state['toStart'] = false;
+                } else {
+                    state[transitions[i].property] = transitions[i].start;
+                    state['toStart'] = true;
                 }
+                this.setState(Object.assign({}, this.state, state));
             }
         };
 
@@ -100,7 +109,8 @@ export default ComposedComponent => {
         };
 
         render() {
-            let { transitions } = this.state;
+
+            let { transitions, toStart } = this.state;
             let style = this.props.style || {};
 
             if (transitions && transitions.length != 0) {
@@ -112,7 +122,7 @@ export default ComposedComponent => {
                             transitions[i].timingFunction,
                             transitions[i].delay );
 
-                    __transitions__.push(__transition__);
+                    if (!toStart) __transitions__.push(__transition__);
                     style[transitions[i].property] = this.state[transitions[i].property];
                 }
                 style = Object.assign({}, style , this.__style__(__transitions__.join(', ')));
