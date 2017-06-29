@@ -77,8 +77,8 @@ export default ComposedComponent => {
             if (!this.props.animated) return;
 
             let transitions = this.state.transitions;
+            let state = {  };
             for (let i=0; i<transitions.length; i++) {
-                let state = {  };
                 if(this.state[transitions[i].property] != transitions[i].end) {
                     state[transitions[i].property] = transitions[i].end;
                     state['toStart'] = false;
@@ -86,8 +86,8 @@ export default ComposedComponent => {
                     state[transitions[i].property] = transitions[i].start;
                     state['toStart'] = true;
                 }
-                this.setState(Object.assign({}, this.state, state));
             }
+            this.setState(Object.assign({}, this.state, state));
         };
 
         __transition__ = (transitionProperty,
