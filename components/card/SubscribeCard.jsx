@@ -18,8 +18,7 @@ class SubscribeCard extends Component {
                 {
                     this.props.children
                 }
-                <section onClick={ () => { onClick && onClick() } }
-                         style={{ cursor: (onClick ? 'pointer' : 'inherit') }}>
+                <section onClick={ () => { onClick && onClick() } }>
                     <img src={ cover } />
                 </section>
 

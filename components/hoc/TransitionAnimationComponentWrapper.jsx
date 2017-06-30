@@ -1,7 +1,7 @@
 'use strict';
 import React, { Component, PropTypes } from 'react';
 import StyleComponentWrapper from './StyleComponentWrapper.jsx';
-import { isNumber, isString, isObject, isArray } from '../../common/Utils';
+import { isNumber, isString, isObject, isArray, isFunction } from '../../common/Utils';
 
 /**
  *
@@ -58,10 +58,10 @@ export default ComposedComponent => {
             if (!this.props.animated) return;
 
             // to start without animation
-            this.resolveAnimationFrame();
-
-            // to end with animation
-            request = __requestAnimationFrame__(this.resolveAnimationFrame);
+            this.resolveAnimationFrame( () => {
+                // to end with animation
+                request = __requestAnimationFrame__(this.resolveAnimationFrame);
+            });
         }
 
         componentDidMount() {
@@ -73,7 +73,7 @@ export default ComposedComponent => {
             __cancelAnimationFrame__(request);
         }
 
-        resolveAnimationFrame = () => {
+        resolveAnimationFrame = callback => {
             if (!this.props.animated) return;
 
             let transitions = this.state.transitions;
@@ -87,7 +87,9 @@ export default ComposedComponent => {
                     state['toStart'] = true;
                 }
             }
-            this.setState(Object.assign({}, this.state, state));
+            this.setState(Object.assign({}, this.state, state), () => {
+                callback && isFunction(callback) && callback();
+            });
         };
 
         __transition__ = (transitionProperty,
