@@ -19,3 +19,4 @@ export { default as Tips } from './tip/Tips.jsx';
 export { default as ClickComponentWrapper } from './hoc/ClickComponentWrapper.jsx';
 export { default as HoverComponentWrapper } from './hoc/HoverComponentWrapper.jsx';
 export { default as StyleComponentWrapper } from './hoc/StyleComponentWrapper.jsx';
+export { default as TransitionAnimationComponentWrapper } from './hoc/TransitionAnimationComponentWrapper.jsx';

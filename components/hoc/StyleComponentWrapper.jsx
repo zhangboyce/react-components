@@ -11,9 +11,9 @@ import { isObject, isString } from '../../common/Utils';
 export default ComposedComponent => {
     let Wrapped = class extends Component {
 
-        componentDidMount() {
+        __setStyle__ = props => {
             let $this = $(ReactDOM.findDOMNode(this));
-            let style = this.props.style;
+            let style = props.style;
             if (isString(style)) {
                 $this.addClass(style.replace('\.', ''));
             } else if (isObject(style)) {
@@ -23,6 +23,14 @@ export default ComposedComponent => {
                     }
                 }
             }
+        };
+
+        componentDidMount() {
+            this.__setStyle__(this.props);
+        }
+
+        componentWillReceiveProps(nextProps) {
+            this.__setStyle__(nextProps);
         }
 
         render() {
