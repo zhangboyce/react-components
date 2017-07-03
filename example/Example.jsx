@@ -9,8 +9,8 @@ let i = 0;
 for (let k in demos) {
         if (Object.prototype.hasOwnProperty.call(demos, k)) {
                 let comp = demos[k];
-                if (i == 0) routers.push(<Route path="/" component={ comp } />);
-                routers.push(<Route path={ k.replace('Demo', '').toLowerCase() } component={ comp }/>);
+                if (i == 0) routers.push(<Route key={ k + 'root' } path="/" component={ comp } />);
+                routers.push(<Route key={ k } path={ k.replace('Demo', '').toLowerCase() } component={ comp }/>);
         }
         i ++;
 }

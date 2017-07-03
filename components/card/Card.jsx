@@ -2,7 +2,10 @@
 
 import React, { Component, PropTypes } from 'react';
 import './card.less';
-import PseudoClassComponentWrapper from '../PseudoClassComponentWrapper.jsx';
+import StyleComponentWrapper from '../hoc/StyleComponentWrapper.jsx';
+import ClickComponentWrapper from '../hoc/ClickComponentWrapper.jsx';
+import HoverComponentWrapper from '../hoc/HoverComponentWrapper.jsx';
+import { withWrapper } from '../hoc/wrapper.js';
 
 class Card extends Component {
 
@@ -13,23 +16,27 @@ class Card extends Component {
     };
 
     render() {
-        let { style, cover, title, author, desc, readNum, likeNum, createdDate  } = this.props;
+        let { onClick, cover, TipsComponent, LazyImageComponent, title, author, desc  } = this.props;
         return (
-          <div style={ style } className="react-component-card" onClick={ this.handleOnClick }>
-              <img src={ cover } />
+          <div className="react-component-card" onClick={ () => { onClick && onClick() } }>
+              {
+                  LazyImageComponent && <LazyImageComponent url={ cover } />
+              }
+              {
+                  !LazyImageComponent && <img src={ cover } />
+              }
               <div>
                   <h4 title={ title }>
                       { title }
                   </h4>
-                  <div className="author">
-                      <span title={ author }>{ author || '' }</span>
-                  </div>
-                  <p title={ desc }>{ desc }</p>
-                  <div className="tips">
-                      <i className="fa fa-eye">&nbsp;{ this.handleFilter(readNum) || '-' }</i>
-                      <i className="fa fa-heart">&nbsp;{ this.handleFilter(likeNum) || '-' }</i>
-                      <i className="fa fa-calendar-plus-o">&nbsp;{ createdDate || '-' }</i>
-                  </div>
+                  {
+                      author &&
+                      <div className="author">
+                          <span>{ author }</span>
+                      </div>
+                  }
+                  <p>{ desc }</p>
+                  { TipsComponent }
               </div>
           </div>
         );
@@ -37,15 +44,15 @@ class Card extends Component {
 }
 
 Card.propTypes = {
-    cover:PropTypes.string.isRequired,
-    title:PropTypes.string.isRequired,
-    author:PropTypes.string,
-    style:PropTypes.object,
-    desc:PropTypes.string,
-    readNum:PropTypes.string,
-    likeNum:PropTypes.string,
-    createdDate:PropTypes.string,
-    onClick:PropTypes.func
+    cover: PropTypes.string.isRequired,
+    LazyImageComponent: PropTypes.func,
+    TipsComponent: PropTypes.element,
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string,
+    desc: PropTypes.string,
+    onClick: PropTypes.func
 };
 
-export default PseudoClassComponentWrapper(Card);
+export default withWrapper(StyleComponentWrapper, ClickComponentWrapper, HoverComponentWrapper)(Card);
+
+

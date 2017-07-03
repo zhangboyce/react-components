@@ -2,7 +2,10 @@
 import React, { Component, PropTypes } from 'react';
 import './tag.less';
 import * as types from './constant';
-import PseudoClassComponentWrapper from '../PseudoClassComponentWrapper.jsx';
+import StyleComponentWrapper from '../hoc/StyleComponentWrapper.jsx';
+import ClickComponentWrapper from '../hoc/ClickComponentWrapper.jsx';
+import HoverComponentWrapper from '../hoc/HoverComponentWrapper.jsx';
+import { withWrapper } from '../hoc/wrapper.js';
 
 class Tag extends Component {
     constructor(props) {
@@ -53,4 +56,4 @@ Tag.defaultProps = {
     type: types.TAG_TYPE_COMMON
 };
 
-export default PseudoClassComponentWrapper(Tag);
+export default withWrapper(StyleComponentWrapper, ClickComponentWrapper, HoverComponentWrapper)(Tag);

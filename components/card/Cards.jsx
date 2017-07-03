@@ -1,6 +1,7 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
+import { isArray } from '../../common/Utils';
 
 export default class Cards extends Component {
 
@@ -14,10 +15,10 @@ export default class Cards extends Component {
         let margin = `${marginTopBottom} ${ marginLeftRight }%`;
 
         let children = this.props.children;
-        children = Object.prototype.toString.call(children) === "[object Array]" ? children : [ children ];
+        children = isArray(children) ? children : [ children ];
         children = children.map((child, index) => React.cloneElement(child, {
             key: index,
-            style: { width: width, margin: margin }
+            style: Object.assign({}, child.props.style || {},  { width: width, margin: margin })
         }));
 
         return (
