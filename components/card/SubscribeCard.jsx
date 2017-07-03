@@ -8,7 +8,6 @@ import TransitionAnimationComponentWrapper from '../hoc/TransitionAnimationCompo
 import { withWrapper } from '../hoc/wrapper.js';
 
 import './card.less';
-
 class SubscribeCard extends Component {
 
     render() {

@@ -10,6 +10,12 @@ import { withWrapper } from '../hoc/wrapper.js';
 
 class Card extends Component {
 
+    handleFilter = num => num >= 1000 ? (num / 1000).toFixed(1) + 'k+' : num;
+
+    handleOnClick = () => {
+        this.props.onClick && this.props.onClick()
+    };
+
     render() {
         let { onClick, cover, TipsComponent, LazyImageComponent, title, author, desc  } = this.props;
         return (
