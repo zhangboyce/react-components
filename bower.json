@@ -15,7 +15,6 @@
     "tests"
   ],
   "dependencies": {
-    "unslider": "^2.0.3",
-    "swiper": "^3.4.2"
+    "unslider": "^2.0.3"
   }
 }
