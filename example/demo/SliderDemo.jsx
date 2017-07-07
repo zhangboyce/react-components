@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react';
-import  { Slider, Sliders, Swipers }  from 'react-components';
+import  { Slider, Sliders }  from 'react-components';
 import Layout from './../Layout.jsx';
 import DP from './DP.jsx';
 
@@ -39,6 +39,8 @@ export default class SliderDemo extends Component {
                         <Slider image={ images[3] } />
                     </Sliders>
                 </DP>
+
+
             </Layout>
         );
     }

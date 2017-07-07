@@ -1,6 +1,7 @@
 'use strict';
 import React, { Component, PropTypes } from 'react';
 import { isFunction } from '../../common/Utils';
+import { isSafari } from '../../common/Navigator';
 
 export const compose = (...funcs) => {
     if (funcs.length === 0) {
@@ -37,12 +38,13 @@ export const withWrapper =  (... wrappers) => ComposedComponent => {
             console.warn('wrapper: ' + wrapper +' must be a function.');
             return;
         }
-
         ComposedComponent = wrapper(ComposedComponent);
-        Object.defineProperty(ComposedComponent, "name", {
-            value: name,
-            writable: false
-        });
+        if (!isSafari()) {
+            Object.defineProperty(ComposedComponent, "name", {
+                value: name,
+                writable: true
+            });
+        }
     };
 
     Wrapped.use = function (..._wrappers_) {
@@ -56,10 +58,12 @@ export const withWrapper =  (... wrappers) => ComposedComponent => {
         }
     };
 
-    Object.defineProperty(Wrapped, "name", {
-        value: name,
-        writable: false
-    });
+    if (!isSafari()) {
+        Object.defineProperty(Wrapped, "name", {
+            value: name,
+            writable: true
+        });
+    }
 
     return Wrapped;
 };
