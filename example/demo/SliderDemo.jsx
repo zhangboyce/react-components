@@ -39,10 +39,6 @@ export default class SliderDemo extends Component {
                         <Slider image={ images[3] } />
                     </Sliders>
                 </DP>
-                <DP title="4. Swiper">
-                    <Swipers />
-                </DP>
-
             </Layout>
         );
     }
