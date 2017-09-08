@@ -16,3 +16,9 @@ export const isFirefox = () => Sys.firefox;
 export const isChrome = () => Sys.chrome;
 export const isOpera = () => Sys.opera;
 export const isSafari = () => Sys.safari;
+
+
+
+export const mq = window.matchMedia("(min-width: 768px)");
+export const isPC = mq.matches;
+export const isMobile = !isPC;

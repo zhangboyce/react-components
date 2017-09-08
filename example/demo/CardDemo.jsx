@@ -82,6 +82,42 @@ export default class CardDemo extends Component {
         return (
             <Layout title="CardDemo">
 
+                <DP title="-4. 媒体查询:">
+                    <Cards marginLeftRight={ 0.8 } rowCols='auto'>
+                        {
+                            this.state.cards.map((card, index) => {
+                                return (
+                                    <Card cover={card.cover}
+                                          title={card.title}
+                                          author={card.author}
+                                    />
+                                );
+                            })
+                        }
+                    </Cards>
+                    <Cards rowCols='auto'>
+                        <SubscribeCard cover="/public/images/card/001.jpg"
+                                       author="男人装男人装男人装男人装男人装男人装男人装"
+                                       desc="阅读本文前，请您先点击本文上面的蓝色字体“教你学一点说话技巧”再点击“关注”，这样您就可以继续免费收到文章了"
+                                       readNum={1212}
+                                       likeNum={98227}
+                                       articleNum={2134}
+                                       onClick={ () => { alert('be clicked.'); } } >
+                            <a href="javascript:;" onClick={ () => { alert('订阅'); } }><span>订阅</span></a>
+                        </SubscribeCard>
+                        <SubscribeCard cover="/public/images/card/001.jpg"
+                                       author="男人装男人装男人装男人装男人装男人装男人装"
+                                       desc="阅读本文前，请您先点击本文上面的蓝色字体“教你学一点说话技巧”再点击“关注”，这样您就可以继续免费收到文章了"
+                                       readNum={1212}
+                                       likeNum={98227}
+                                       articleNum={2134}
+                                       onClick={ () => { alert('be clicked.'); } } >
+
+                            <a href="javascript:;" onClick={ () => { alert('取消订阅'); } } style={{ color:'#808080',border:'1px solid #808080' }}><span>取消订阅</span></a>
+                        </SubscribeCard>
+                    </Cards>
+                </DP>
+
                 <DP title="-3. Fadein&Fadeout&滑进滑出动画卡片:">
                     <a href="javascript:;" onClick={  this.dianwo  }>点我</a><br/>
                     <a href="javascript:;" onClick={  this.dianta  }>点他</a><br/>

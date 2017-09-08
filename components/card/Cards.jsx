@@ -2,14 +2,34 @@
 
 import React, { Component, PropTypes } from 'react';
 import { isArray } from '../../common/Utils';
+import { mq, isPC, isMobile } from '../../common/Navigator';
 import './card.less';
 
+const ROWCOLS_AUTO = 'auto';
+
 export default class Cards extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = { isPC: isPC };
+    }
+
+    componentDidMount() {
+        let rowCols = this.props.rowCols;
+        if (rowCols == ROWCOLS_AUTO) {
+            mq.addListener(mq => {
+                this.setState({ isPC: mq.matches });
+            });
+        }
+    }
 
     render() {
         let rowCols = this.props.rowCols;
         let marginLeftRight = this.props.marginLeftRight;
         let marginTopBottom = this.props.marginTopBottom;
+
+        rowCols = rowCols == ROWCOLS_AUTO ? this.state.isPC ? 3: 1: rowCols;
 
         let sum_margin = rowCols * 2 * marginLeftRight;
         let width = ((100-sum_margin) / rowCols) + '%';
@@ -33,7 +53,7 @@ export default class Cards extends Component {
 Cards.propTypes = {
     marginTopBottom: PropTypes.string,
     marginLeftRight: PropTypes.number,
-    rowCols:PropTypes.oneOf([1, 2, 3, 4, 5, 6])
+    rowCols:PropTypes.oneOf([1, 2, 3, 4, 5, 6, ROWCOLS_AUTO])
 };
 
 Cards.defaultProps = {
