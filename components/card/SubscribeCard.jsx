@@ -21,9 +21,8 @@ class SubscribeCard extends Component {
                     <img src={ cover } />
                 </section>
 
-                <div>
-                    <h4 onClick={ () => { onClick && onClick() } }
-                        style={{ cursor: (onClick ? 'pointer' : 'inherit') }}>
+                <div onClick={ () => { onClick && onClick() } }>
+                    <h4 style={{ cursor: (onClick ? 'pointer' : 'inherit') }}>
                         { author || '' }
                     </h4>
 
