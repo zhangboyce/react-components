@@ -40,6 +40,7 @@ export default class SliderDemo extends Component {
                     </Sliders>
                 </DP>
 
+
             </Layout>
         );
     }
